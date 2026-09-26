@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0a1f44" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Cape Breton AI Services | AI Automation for Local Businesses</title>
+  <meta name="description" content="Practical AI automation for Cape Breton businesses: AI receptionists, missed-call text-back, lead follow-up, booking, chatbots, CRM, email, SMS, and review generation." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cape Breton AI Services | Practical Business Automation" />
+  <meta property="og:description" content="Answer leads faster, book more appointments, and reduce repetitive admin with practical AI solutions built for local businesses." />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="Cape Breton AI Services" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Cape Breton AI Services" />
+  <meta name="twitter:description" content="Practical AI solutions built for local businesses in Cape Breton, Nova Scotia." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Cape Breton AI Services","description":"Practical AI automation services for small and medium-sized businesses.","areaServed":["Cape Breton, Nova Scotia","Nova Scotia, Canada","Sydney, Nova Scotia","Glace Bay, Nova Scotia","North Sydney, Nova Scotia","Sydney Mines, Nova Scotia","New Waterford, Nova Scotia","Louisbourg, Nova Scotia","Baddeck, Nova Scotia","Port Hawkesbury, Nova Scotia","Inverness, Nova Scotia","Chéticamp, Nova Scotia"],"telephone":"+1-902-709-0974","email":"CapeBretonAIServices@gmail.com","sameAs":["https://www.facebook.com/profile.php?id=61595028950871"],"founder":{"@type":"Person","givenName":"Garrett"},"slogan":"Practical AI solutions built for local businesses.","knowsAbout":["AI receptionist","missed-call text-back","automated lead follow-up","appointment booking automation","AI chatbots","CRM automation","email and SMS automation","review generation"]}</script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --navy: #0a1f44;
+      --navy-2: #112d5e;
+      --blue: #167ee8;
+      --blue-strong: #0869c8;
+      --blue-soft: #e9f4ff;
+      --ink: #10213b;
+      --muted: #50627a;
+      --paper: #ffffff;
+      --canvas: #f5f8fc;
+      --line: #d9e2ed;
+      --soft-line: #e9eef4;
+      --success: #0a6f55;
+      --shadow: 0 18px 50px rgba(10, 31, 68, .10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 10px;
+      --max: 1180px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --navy: #07162f;
+        --navy-2: #102d5c;
+        --blue: #4aa3ff;
+        --blue-strong: #77baff;
+        --blue-soft: #102d50;
+        --ink: #edf5ff;
+        --muted: #aebdd0;
+        --paper: #0b182b;
+        --canvas: #07111f;
+        --line: #263952;
+        --soft-line: #1c2b40;
+        --success: #58c5a5;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    svg { display: block; }
+    .skip-link {
+      position: fixed; left: 16px; top: -60px; z-index: 100;
+      background: var(--paper); color: var(--ink); padding: 10px 14px; border-radius: 8px;
+    }
+    .skip-link:focus { top: 12px; }
+    .site-nav {
+      position: sticky; top: 0; z-index: 30;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      border-bottom: 1px solid var(--soft-line);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px)); min-height: 72px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-link {
+      text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 650;
+      padding: 9px 12px; border-radius: 8px;
+    }
+    .nav-link:hover, .nav-link[aria-current="page"] { color: var(--ink); background: var(--blue-soft); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-phone {
+      display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border-radius: 8px;
+      color: var(--blue-strong); font-size: .9rem; font-weight: 800; line-height: 1.2;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-phone:hover { background: var(--blue-soft); }
+    .menu-btn {
+      display: none; border: 1px solid var(--line); color: var(--ink); background: var(--paper);
+      border-radius: 9px; padding: 9px 12px; font-weight: 700; cursor: pointer;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 46px; padding: 11px 18px; border-radius: 10px;
+      text-decoration: none; font-size: .92rem; line-height: 1.2; font-weight: 750;
+      border: 1px solid transparent; transition: background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-strong); }
+    .btn-secondary { background: var(--paper); color: var(--ink); border-color: var(--line); }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue-strong); }
+    .btn-light { background: #fff; color: #09204a; }
+    .btn-light:hover { background: #dfefff; }
+    .btn-ghost-light { border-color: rgba(255,255,255,.32); color: #fff; }
+    .btn-ghost-light:hover { background: rgba(255,255,255,.1); }
+    .icon { width: 19px; height: 19px; flex: 0 0 auto; }
+    .page { display: none; min-height: calc(100vh - 72px); }
+    .page.active { display: block; animation: pageIn .28s ease-out; }
+    @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .page.active { animation: none; } }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      background: var(--navy); color: #fff; overflow: hidden; position: relative;
+      padding: clamp(68px, 9vw, 118px) 0 76px;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; opacity: .26; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,.28) 1px, transparent 1px);
+      background-size: 28px 28px; mask-image: linear-gradient(90deg, transparent 6%, #000 68%, transparent);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .78fr); align-items: center; gap: 72px; }
+    .eyebrow {
+      margin: 0 0 18px; color: #8fc8ff; font-weight: 750; font-size: .88rem; letter-spacing: .025em;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 22px; max-width: 760px; font-size: clamp(2.7rem, 6vw, 5.6rem); line-height: .99; letter-spacing: -.055em; font-weight: 800; }
+    h2 { margin-bottom: 16px; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; letter-spacing: -.042em; }
+    h3 { margin-bottom: 9px; font-size: 1.16rem; line-height: 1.3; }
+    .hero-copy { max-width: 690px; color: #c5d7ec; font-size: clamp(1.05rem, 2vw, 1.22rem); }
+    .hero-actions { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 32px; }
+    .service-note { display: flex; gap: 9px; align-items: center; color: #a9bfd8; margin-top: 24px; font-size: .9rem; }
+    .signal-board { position: relative; min-height: 390px; display: flex; align-items: center; justify-content: center; }
+    .signal-card {
+      width: min(100%, 430px); background: #fff; color: #10213b; border-radius: 22px; padding: 26px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.26); transform: rotate(1.6deg);
+    }
+    .signal-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid #e3eaf2; }
+    .status { color: #08765b; background: #e5f6f1; padding: 6px 10px; border-radius: 999px; font-size: .75rem; font-weight: 800; }
+    .call-line { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 13px; padding: 18px 0; border-bottom: 1px solid #e8edf3; }
+    .call-icon { width: 42px; height: 42px; display: grid; place-items: center; color: #086fda; background: #e8f3ff; border-radius: 50%; }
+    .call-line strong { display: block; font-size: .94rem; }
+    .call-line small { color: #5a6b81; }
+    .check { color: #08765b; }
+    .board-foot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 18px; }
+    .mini-stat { background: #f4f7fa; border-radius: 10px; padding: 12px; }
+    .mini-stat strong { display: block; color: #0a1f44; font-size: .82rem; }
+    .mini-stat span { color: #65748a; font-size: .72rem; }
+    .section { padding: clamp(68px, 9vw, 108px) 0; }
+    .section.paper { background: var(--paper); }
+    .section-intro { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 40px; }
+    .section-intro > div { max-width: 720px; }
+    .section-intro p, .lede { color: var(--muted); max-width: 680px; font-size: 1.05rem; }
+    .text-link { color: var(--blue-strong); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; white-space: nowrap; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .service-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 24px; }
+    .service-card .glyph, .detail-icon {
+      width: 38px; height: 38px; color: var(--blue-strong); margin-bottom: 22px;
+      display: grid; place-items: center; background: var(--blue-soft); border-radius: 9px;
+    }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: .91rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .step { position: relative; padding: 32px 36px 0 0; }
+    .step + .step { padding-left: 36px; border-left: 1px solid var(--line); }
+    .step-number { color: var(--blue-strong); font-size: .82rem; font-weight: 800; margin-bottom: 40px; }
+    .step p { color: var(--muted); margin-bottom: 0; }
+    .cta-band { background: var(--navy); color: #fff; padding: 58px; border-radius: var(--radius-lg); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 36px; }
+    .cta-band h2 { font-size: clamp(1.75rem, 3.6vw, 2.8rem); margin-bottom: 10px; max-width: 700px; }
+    .cta-band p { color: #bfd1e5; margin-bottom: 0; max-width: 680px; }
+    .cta-actions { display: flex; flex-direction: column; gap: 10px; min-width: 250px; }
+    .page-hero { background: var(--navy); color: #fff; padding: clamp(58px, 8vw, 92px) 0; }
+    .page-hero h1 { max-width: 850px; font-size: clamp(2.5rem, 5vw, 4.6rem); }
+    .page-hero p { color: #c3d4e8; max-width: 750px; font-size: 1.13rem; margin-bottom: 0; }
+    .detail-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .detail-card { display: grid; grid-template-columns: 54px 1fr; gap: 18px; background: var(--paper); border-bottom: 1px solid var(--line); padding: 30px 28px; }
+    .detail-icon { margin: 0; width: 48px; height: 48px; }
+    .detail-card p { color: var(--muted); margin-bottom: 13px; }
+    .outcome { color: var(--ink) !important; font-size: .89rem; font-weight: 700; }
+    .outcome span { color: var(--success); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: stretch; }
+    .price-card { grid-column: span 2; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px; display: flex; flex-direction: column; }
+    .price-card:nth-child(4) { grid-column: 2 / span 2; }
+    .price-card.best { grid-column: span 2; background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: var(--shadow); position: relative; }
+    .best-label { align-self: flex-start; color: #09204a; background: #9bd0ff; border-radius: 999px; padding: 5px 10px; font-size: .72rem; font-weight: 850; margin-bottom: 20px; }
+    .price-card h3 { min-height: 3em; }
+    .price { font-size: 1.8rem; font-weight: 800; letter-spacing: -.035em; line-height: 1.2; }
+    .price-sub { color: var(--muted); margin-bottom: 24px; font-size: .88rem; min-height: 1.5em; }
+    .best .price-sub, .best .price-card-copy { color: #bdd1e7; }
+    .price-card-copy { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+    .price-card .btn { margin-top: auto; }
+    .pricing-note { margin: 28px auto 0; max-width: 760px; text-align: center; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .place-panel { background: var(--navy); color: #fff; padding: 34px; border-radius: var(--radius-lg); min-height: 380px; position: relative; overflow: hidden; }
+    .place-panel::after { content: ""; position: absolute; width: 250px; height: 250px; border: 34px solid #1e90ff; border-radius: 50%; right: -105px; bottom: -110px; opacity: .55; }
+    .place-panel small { color: #8fc8ff; font-weight: 750; }
+    .place-panel h2 { margin-top: 42px; font-size: 2.45rem; max-width: 330px; }
+    .place-panel p { color: #c3d4e8; max-width: 320px; }
+    .story p { color: var(--muted); font-size: 1.05rem; }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 34px; }
+    .principle { border-top: 2px solid var(--blue); padding: 18px 4px 0; }
+    .principle p { font-size: .9rem; margin: 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 70px; align-items: start; }
+    .contact-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 34px; box-shadow: var(--shadow); }
+    .contact-method { display: flex; gap: 16px; align-items: flex-start; text-decoration: none; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .contact-method:last-child { border-bottom: 0; padding-bottom: 0; }
+    .contact-method:first-of-type { padding-top: 6px; }
+    .contact-method strong { display: block; margin-bottom: 3px; }
+    .contact-method span { color: var(--muted); overflow-wrap: anywhere; }
+    .contact-method .glyph { color: var(--blue-strong); margin-top: 2px; }
+    .area-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin: 26px 0 0; padding: 0; list-style: none; }
+    .area-list li { padding: 11px 0; border-bottom: 1px solid var(--line); font-weight: 650; }
+    .contact-note { color: var(--muted); margin-top: 26px; }
+    .problem-grid, .use-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .problem-card, .use-case { padding: 27px 0 4px; border-top: 2px solid var(--blue); }
+    .problem-card p, .use-case p { color: var(--muted); margin-bottom: 0; }
+    .problem-card strong { display: block; color: var(--blue-strong); margin-bottom: 7px; font-size: .82rem; }
+    .industry-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 0; padding: 0; list-style: none; }
+    .industry-list li { background: var(--paper); border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; font-weight: 700; font-size: .9rem; }
+    .demo-panel { display: grid; grid-template-columns: .82fr 1.18fr; gap: 58px; align-items: center; }
+    .demo-audio { background: var(--navy); color: #fff; padding: 34px; border-radius: var(--radius-lg); }
+    .demo-audio p { color: #c3d4e8; }
+    .demo-wave { height: 82px; display: flex; align-items: center; gap: 5px; margin: 26px 0; }
+    .demo-wave span { width: 5px; border-radius: 4px; background: #69b5ff; opacity: .92; }
+    .demo-wave span:nth-child(1), .demo-wave span:nth-child(9) { height: 20%; }
+    .demo-wave span:nth-child(2), .demo-wave span:nth-child(8) { height: 42%; }
+    .demo-wave span:nth-child(3), .demo-wave span:nth-child(7) { height: 76%; }
+    .demo-wave span:nth-child(4), .demo-wave span:nth-child(6) { height: 55%; }
+    .demo-wave span:nth-child(5) { height: 100%; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { cursor: pointer; list-style: none; padding: 22px 44px 22px 0; font-weight: 750; position: relative; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 1.5rem; color: var(--blue-strong); }
+    .faq-list details[open] summary::after { content: "–"; }
+    .faq-list details p { color: var(--muted); max-width: 800px; padding: 0 40px 22px 0; margin: 0; }
+    .lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .86rem; font-weight: 750; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--canvas); color: var(--ink); font: inherit; }
+    .field textarea { min-height: 112px; resize: vertical; }
+    .form-help, .form-status { grid-column: 1 / -1; color: var(--muted); font-size: .82rem; margin: 0; }
+    .form-status { color: var(--success); font-weight: 700; min-height: 1.3em; }
+    .lead-form .btn { justify-self: start; }
+    footer { background: var(--paper); border-top: 1px solid var(--line); }
+    .footer-inner { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; min-height: 116px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .84rem; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { text-underline-offset: 4px; }
+    :focus-visible { outline: 3px solid #55aaff; outline-offset: 3px; }
+
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .signal-board { min-height: auto; justify-content: flex-start; }
+      .signal-card { transform: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .price-card, .price-card:nth-child(4), .price-card.best { grid-column: auto; }
+      .price-card.best { grid-column: 1 / -1; }
+      .about-grid, .contact-grid { gap: 42px; }
+      .problem-grid, .use-case-grid { grid-template-columns: repeat(2, 1fr); }
+      .demo-panel { grid-template-columns: 1fr; gap: 32px; }
+      .cta-band { grid-template-columns: 1fr; }
+      .cta-actions { flex-direction: row; min-width: 0; flex-wrap: wrap; }
+    }
+    @media (max-width: 760px) {
+      .nav-inner { min-height: 64px; width: min(100% - 28px, var(--max)); }
+      .menu-btn { display: inline-flex; align-items: center; gap: 8px; }
+      .nav-links {
+        display: none; position: absolute; left: 14px; right: 14px; top: 58px; padding: 10px;
+        background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+        flex-direction: column; align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .nav-link { padding: 12px 14px; }
+      .nav-actions > .btn { display: none; }
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .hero { padding-top: 58px; }
+      h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
+      .signal-card { padding: 19px; }
+      .board-foot { grid-template-columns: 1fr; }
+      .services-grid, .detail-list, .pricing-grid, .about-grid, .contact-grid, .principles, .problem-grid, .use-case-grid { grid-template-columns: 1fr; }
+      .lead-form { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .section-intro { align-items: flex-start; flex-direction: column; }
+      .steps { grid-template-columns: 1fr; }
+      .step { padding: 26px 0; }
+      .step + .step { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
+      .step-number { margin-bottom: 14px; }
+      .cta-band { padding: 34px 24px; }
+      .cta-actions { flex-direction: column; align-items: stretch; }
+      .detail-card { grid-template-columns: 1fr; padding: 26px 22px; }
+      .price-card h3 { min-height: 0; }
+      .about-grid { gap: 28px; }
+      .place-panel { min-height: 320px; }
+      .contact-grid { gap: 32px; }
+      .contact-card { padding: 24px; }
+      .area-list { grid-template-columns: 1fr; }
+      .footer-inner { padding: 28px 0; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 420px) {
+      .nav-phone { padding-inline: 5px; font-size: .82rem; }
+      .nav-phone-label { display: none; }
+      .hero-actions, .page-hero .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .call-line { grid-template-columns: 40px 1fr; }
+      .call-line > .check { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menu
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#home" data-route="home">Home</a>
+        <a class="nav-link" href="#services" data-route="services">Services</a>
+        <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
+        <a class="nav-link" href="#about" data-route="about">About</a>
+        <a class="nav-link" href="#contact" data-route="contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:+19027090974" aria-label="Call Cape Breton AI Services at 902-709-0974"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><span class="nav-phone-label">Call </span>902-709-0974</span></a>
+        <a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="page active" id="page-home" data-page="home" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">Built in Cape Breton for local service businesses</p>
+            <h1 id="home-title">Turn more calls into booked jobs.</h1>
+            <p class="hero-copy">Practical AI solutions built for local businesses. Answer every call, follow up every lead, and keep work moving—even when you are busy on the job.</p>
+            <div class="hero-actions">
+              <a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener" data-conversion="consultation-hero">Book a Free AI Automation Consultation</a>
+              <a class="btn btn-ghost-light" href="#problems" data-scroll-target="problems">See What We Can Automate</a>
+              <a class="btn btn-ghost-light" href="tel:+19027090974" data-conversion="phone-hero">Call 902-709-0974</a>
+            </div>
+            <p class="service-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Based in Sydney, Nova Scotia · Serving Cape Breton and Nova Scotia</p>
+          </div>
+          <div class="signal-board" aria-label="An example of a customer call moving through a simple follow-up workflow">
+            <div class="signal-card">
+              <div class="signal-top"><strong>Customer response flow</strong><span class="status">Active</span></div>
+              <div class="call-line">
+                <span class="call-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                <span><strong>New call answered</strong><small>Friendly, clear first response</small></span><svg class="icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              </div>
+              <div class="call-line">
+                <span class="call-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span>
+                <span><strong>Lead details captured</strong><small>No chasing notes after the call</small></span><svg class="icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              </div>
+              <div class="call-line">
+                <span class="call-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></span>
+                <span><strong>Appointment requested</strong><small>Your calendar stays organized</small></span><svg class="icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              </div>
+              <div class="board-foot">
+                <div class="mini-stat"><strong>Answer</strong><span>Customers promptly</span></div>
+                <div class="mini-stat"><strong>Follow up</strong><span>Without delay</span></div>
+                <div class="mini-stat"><strong>Book</strong><span>More efficiently</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section paper" id="problems">
+        <div class="wrap">
+          <div class="section-intro"><div><h2>Where good opportunities get lost.</h2><p>Most local businesses do not need more software. They need a few costly gaps closed so customers get a useful response at the right time.</p></div></div>
+          <div class="problem-grid">
+            <article class="problem-card"><strong>MISSED CALL</strong><h3>You cannot answer while working.</h3><p>An AI receptionist or immediate text-back keeps the conversation alive and captures what the caller needs.</p></article>
+            <article class="problem-card"><strong>SLOW FOLLOW-UP</strong><h3>New leads wait too long.</h3><p>Automatic email and text follow-up moves inquiries toward a clear next step without relying on spare time.</p></article>
+            <article class="problem-card"><strong>BOOKING FRICTION</strong><h3>Scheduling takes too much back-and-forth.</h3><p>Booking automation helps qualified customers choose a time and gives your team a cleaner calendar.</p></article>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="wrap">
+          <div class="section-intro">
+            <div><h2>Less admin. Better follow-up.</h2><p>Simple systems that help home-service companies, contractors, and local service businesses respond quickly and keep opportunities from slipping away.</p></div>
+            <a class="text-link" href="#services">Explore all services →</a>
+          </div>
+          <div class="services-grid">
+            <article class="service-card"><div class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M18 19c0 1.1-.9 2-2 2h-3"/><rect x="3" y="12" width="4" height="7" rx="2"/><rect x="17" y="12" width="4" height="7" rx="2"/></svg></div><h3>AI Receptionist</h3><p>Answer calls, handle common questions, capture lead details, and help customers take the next step.</p></article>
+            <article class="service-card"><div class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="m8 11 2 2 4-4"/></svg></div><h3>Missed-Call Text-Back</h3><p>Send a fast, helpful text when a call is missed, so the conversation keeps moving.</p></article>
+            <article class="service-card"><div class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h5l3-8 4 16 3-8h3"/></svg></div><h3>Automated Lead Follow-Up</h3><p>Keep in touch with new inquiries consistently instead of relying on memory and spare time.</p></article>
+            <article class="service-card"><div class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M9 16l2 2 4-4"/></svg></div><h3>Appointment Booking</h3><p>Make it easier for customers to choose a time and get booked without unnecessary back-and-forth.</p></article>
+          </div>
+        </div>
+      </div>
+
+      <div class="section paper">
+        <div class="wrap">
+          <div class="section-intro"><div><h2>A practical path from problem to working system.</h2><p>No technical homework required. We focus on the parts of your day that cost time or lose leads.</p></div></div>
+          <div class="steps">
+            <article class="step"><div class="step-number">01 · Find the gaps</div><h3>Tell us where work gets stuck.</h3><p>We look at missed calls, slow follow-up, repetitive admin, and the steps customers take before booking.</p></article>
+            <article class="step"><div class="step-number">02 · Build the workflow</div><h3>Set up a clear response.</h3><p>We shape a practical system around how your business actually works and how you want customers treated.</p></article>
+            <article class="step"><div class="step-number">03 · Put it to work</div><h3>Launch with confidence.</h3><p>You get a system designed to help your team respond faster, stay organized, and keep leads moving.</p></article>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="wrap">
+          <div class="section-intro"><div><h2>What this looks like in a real workday.</h2><p>Automation should solve a recognizable business problem—not add another complicated system for your team to manage.</p></div></div>
+          <div class="use-case-grid">
+            <article class="use-case"><h3>A contractor is on site</h3><p>A new caller gets answered, their job details are collected, and the right next step is offered while the contractor keeps working.</p></article>
+            <article class="use-case"><h3>A lead has gone quiet</h3><p>Helpful follow-up messages go out on schedule so the opportunity is not forgotten after one busy afternoon.</p></article>
+            <article class="use-case"><h3>A customer is ready to book</h3><p>They can move from question to appointment with less phone tag and fewer manual calendar updates.</p></article>
+          </div>
+          <ul class="industry-list" aria-label="Industries we help"><li>Contractors</li><li>Plumbing</li><li>Electrical</li><li>Home services</li><li>Construction</li><li>Real estate</li><li>Automotive</li><li>Professional services</li><li>Local service businesses</li></ul>
+        </div>
+      </div>
+
+      <div class="section paper">
+        <div class="wrap demo-panel">
+          <div><p class="eyebrow" style="color:var(--blue-strong)">Real demonstration</p><h2>Hear an AI receptionist handle a call.</h2><p class="lede">Listen to the actual recorded demo before you book. It is the fastest way to understand how a receptionist can answer clearly, collect details, and keep a caller moving.</p><a class="btn btn-primary" href="https://muse.ai/s/interactive-demo-fg6nxlxrxdxodxdxx" target="_blank" rel="noopener" data-conversion="demo-home">Hear the live receptionist demo</a></div>
+          <div class="demo-audio" aria-label="Live AI receptionist demonstration"><h3>AI Receptionist · recorded call</h3><p>A real example—not a stock script or invented result.</p><div class="demo-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><a class="btn btn-light" href="https://muse.ai/s/interactive-demo-fg6nxlxrxdxodxdxx" target="_blank" rel="noopener" data-conversion="demo-card">Open the recording</a></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="wrap">
+          <div class="section-intro"><div><h2>Common questions before getting started.</h2><p>Clear answers about fit, setup, and what a first conversation covers.</p></div></div>
+          <div class="faq-list">
+            <details><summary>Will this replace my staff?</summary><p>The focus is repetitive work and response gaps: answering routine questions, capturing lead details, sending follow-up, and helping with booking. Your team stays in control of the customer relationship and the work that needs human judgment.</p></details>
+            <details><summary>Do I need to change all of my current tools?</summary><p>Not necessarily. The first step is understanding the tools and process you already use. We then identify the smallest practical improvement and confirm what can connect before recommending a build.</p></details>
+            <details><summary>Can I hear the AI receptionist before deciding?</summary><p>Yes. The recorded live receptionist demo is available on this site, and the free consultation can focus on how a similar call flow would fit your business.</p></details>
+            <details><summary>What happens in the free consultation?</summary><p>We discuss where leads or admin work get stuck, what a better process should look like, and which service—if any—is the right starting point. There is no need to prepare technical information.</p></details>
+            <details><summary>Where do you provide service?</summary><p>Cape Breton AI Services is based in Sydney, Nova Scotia and works with businesses across Cape Breton and Nova Scotia, including Sydney, Glace Bay, North Sydney, New Waterford, Baddeck, Port Hawkesbury, Inverness, and surrounding communities.</p></details>
+          </div>
+        </div>
+      </div>
+
+      <div class="section paper"><div class="wrap"><div class="cta-band"><div><h2>See what AI automation could take off your plate.</h2><p>Start with a free conversation about your business, your bottlenecks, and the opportunities worth fixing first.</p></div><div class="cta-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener" data-conversion="consultation-home-final">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974" data-conversion="phone-home-final">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener" data-conversion="facebook-home-final">Message us on Facebook</a></div></div></div></div>
+    </section>
+
+    <section class="page" id="page-services" data-page="services" aria-labelledby="services-title">
+      <div class="page-hero"><div class="wrap"><p class="eyebrow">Services</p><h1 id="services-title">Build a faster, more consistent customer journey.</h1><p>Eight focused services for local businesses that want to answer sooner, follow up better, and reduce repetitive work.</p><div class="hero-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div>
+      <div class="section paper"><div class="wrap"><div class="detail-list">
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M18 19c0 1.1-.9 2-2 2h-3"/><rect x="3" y="12" width="4" height="7" rx="2"/><rect x="17" y="12" width="4" height="7" rx="2"/></svg></div><div><h3>AI Receptionist</h3><p><strong>Problem:</strong> Calls go unanswered while your team is busy.</p><p><strong>Solution:</strong> A professional first response answers common questions, captures details, and guides callers toward booking.</p><p class="outcome"><span>Benefit:</span> fewer calls left unanswered and less routine call handling.</p><a class="text-link" href="https://muse.ai/s/interactive-demo-fg6nxlxrxdxodxdxx" target="_blank" rel="noopener" data-conversion="demo-services">Hear the live demo →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="m8 11 2 2 4-4"/></svg></div><div><h3>Missed-Call Text-Back</h3><p><strong>Problem:</strong> A missed caller may contact the next business.</p><p><strong>Solution:</strong> The caller receives a prompt text that acknowledges them and opens a conversation.</p><p class="outcome"><span>Benefit:</span> a missed call does not have to become a missed opportunity.</p><a class="text-link" href="#contact" data-conversion="service-missed-call">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h5l3-8 4 16 3-8h3"/></svg></div><div><h3>Automated Lead Follow-Up</h3><p><strong>Problem:</strong> New inquiries go quiet after the first contact.</p><p><strong>Solution:</strong> Timely messages keep leads moving with a clear path toward the next step.</p><p class="outcome"><span>Benefit:</span> steady follow-up without another daily task for your team.</p><a class="text-link" href="#contact" data-conversion="service-follow-up">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M9 16l2 2 4-4"/></svg></div><div><h3>Appointment Booking Automation</h3><p><strong>Problem:</strong> Scheduling takes too many messages and manual updates.</p><p><strong>Solution:</strong> Help customers move from inquiry to an available time with less back-and-forth.</p><p class="outcome"><span>Benefit:</span> a smoother booking experience for customers and your team.</p><a class="text-link" href="#contact" data-conversion="service-booking">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 8h10M7 12h6"/><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><div><h3>AI Chatbots</h3><p><strong>Problem:</strong> Website visitors leave when answers are hard to find.</p><p><strong>Solution:</strong> Give visitors a helpful way to ask questions, share what they need, and take action.</p><p class="outcome"><span>Benefit:</span> faster answers and a clearer path from browsing to inquiry.</p><a class="text-link" href="#contact" data-conversion="service-chatbot">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8.6 7.5 10.8 16M15.4 7.5 13.2 16M9 6h6"/></svg></div><div><h3>CRM Automation</h3><p><strong>Problem:</strong> Lead details and next steps are scattered.</p><p><strong>Solution:</strong> Organize contacts, follow-up, and tasks so your team can see what needs attention.</p><p class="outcome"><span>Benefit:</span> fewer loose ends and a more consistent sales process.</p><a class="text-link" href="#contact" data-conversion="service-crm">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6M7 16h.01"/></svg></div><div><h3>Email &amp; SMS Automation</h3><p><strong>Problem:</strong> Routine customer messages take time and are easy to miss.</p><p><strong>Solution:</strong> Send timely confirmations, reminders, and follow-up through familiar channels.</p><p class="outcome"><span>Benefit:</span> clearer communication with less repetitive typing.</p><a class="text-link" href="#contact" data-conversion="service-messaging">Discuss this service →</a></div></article>
+        <article class="detail-card"><div class="detail-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3.1 6.3L22 9.3l-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1z"/></svg></div><div><h3>Review Generation</h3><p><strong>Problem:</strong> Happy customers are not consistently asked for feedback.</p><p><strong>Solution:</strong> Build a process that reminds customers to share a review after the work is complete.</p><p class="outcome"><span>Benefit:</span> make review requests a reliable part of your customer experience.</p><a class="text-link" href="#contact" data-conversion="service-reviews">Discuss this service →</a></div></article>
+      </div></div></div>
+      <div class="section"><div class="wrap"><div class="cta-band"><div><h2>Not sure which service fits first?</h2><p>We will look at your current process and identify the simplest place to save time or improve response.</p></div><div class="cta-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div></div>
+    </section>
+
+    <section class="page" id="page-pricing" data-page="pricing" aria-labelledby="pricing-title">
+      <div class="page-hero"><div class="wrap"><p class="eyebrow">Pricing</p><h1 id="pricing-title">Clear packages for practical business improvements.</h1><p>Choose a focused system or combine the essentials. We can use your consultation to confirm the right fit before anything starts.</p><div class="hero-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div>
+      <div class="section paper"><div class="wrap"><div class="pricing-grid">
+        <article class="price-card"><h3>AI Receptionist</h3><div class="price">$997 setup</div><div class="price-sub">+ $197/month</div><p class="price-card-copy">A dependable first response for incoming calls, common questions, lead capture, and next steps.</p><a class="btn btn-secondary" href="https://muse.ai/s/interactive-demo-fg6nxlxrxdxodxdxx" target="_blank" rel="noopener">Hear the live demo</a></article>
+        <article class="price-card"><h3>Follow-Up &amp; Review Engine</h3><div class="price">$697 setup</div><div class="price-sub">+ $147/month</div><p class="price-card-copy">Keep leads moving and make post-service review requests part of a consistent process.</p><a class="btn btn-secondary" href="mailto:CapeBretonAIServices@gmail.com?subject=Follow-Up%20%26%20Review%20Engine">Ask about this package</a></article>
+        <article class="price-card"><h3>Website Optimization</h3><div class="price">$997</div><div class="price-sub">one-time</div><p class="price-card-copy">Improve how your current website guides visitors toward an inquiry, conversation, or booking.</p><a class="btn btn-secondary" href="mailto:CapeBretonAIServices@gmail.com?subject=Website%20Optimization">Ask about this package</a></article>
+        <article class="price-card"><h3>New Website Build</h3><div class="price">Starting at $2,500</div><div class="price-sub">one-time</div><p class="price-card-copy">A professional new website built to explain your offer clearly and help local customers take action.</p><a class="btn btn-secondary" href="mailto:CapeBretonAIServices@gmail.com?subject=New%20Website%20Build">Ask about this package</a></article>
+        <article class="price-card best"><span class="best-label">Best value</span><h3>Complete System Bundle</h3><div class="price">$1,500 setup</div><div class="price-sub">+ $297/month</div><p class="price-card-copy">Bring the core response, follow-up, and customer communication pieces together in one connected system.</p><a class="btn btn-light" href="mailto:CapeBretonAIServices@gmail.com?subject=Complete%20System%20Bundle">Ask about the bundle</a></article>
+      </div><p class="pricing-note">Every business works differently. The free consultation is where we confirm your needs, scope, and best starting point.</p></div></div>
+      <div class="section"><div class="wrap"><div class="cta-band"><div><h2>Choose a package with confidence.</h2><p>Tell us what is taking too much time or where leads go quiet, and we will help you find the clearest next step.</p></div><div class="cta-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div></div>
+    </section>
+
+    <section class="page" id="page-about" data-page="about" aria-labelledby="about-title">
+      <div class="page-hero"><div class="wrap"><p class="eyebrow">About</p><h1 id="about-title">Local perspective. Straightforward solutions.</h1><p>Cape Breton AI Services is based in Sydney, Nova Scotia and serves businesses across Cape Breton and throughout Nova Scotia.</p><div class="hero-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div>
+      <div class="section paper"><div class="wrap about-grid">
+        <aside class="place-panel"><small>Sydney, Nova Scotia</small><h2>Built close to the businesses we serve.</h2><p>Available to home-service companies, contractors, and local service businesses throughout Cape Breton and Nova Scotia.</p></aside>
+        <div class="story"><h2>Technology should make the workday simpler.</h2><p>Run by Garrett, Cape Breton AI Services helps local business owners use practical automation without having to become technology experts.</p><p>The starting point is not a complicated platform or a list of technical features. It is a real business problem: calls that go unanswered, leads that wait too long, appointments that take too much back-and-forth, or repetitive admin that fills the day.</p><p>From there, the goal is simple—build a clear system that helps your business respond faster, stay organized, and give customers a better experience.</p><div class="principles"><article class="principle"><h3>Plain language</h3><p>Clear explanations focused on what changes for your business.</p></article><article class="principle"><h3>Practical first</h3><p>Start with the bottleneck that matters most, not complexity for its own sake.</p></article><article class="principle"><h3>Local understanding</h3><p>Solutions shaped for the pace and needs of Cape Breton businesses.</p></article><article class="principle"><h3>Human experience</h3><p>Automation that helps customers feel answered, guided, and looked after.</p></article></div></div>
+      </div></div>
+      <div class="section"><div class="wrap"><div class="cta-band"><div><h2>Bring us the part of your process that is not working.</h2><p>We will help you find a practical way to improve it.</p></div><div class="cta-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div></div>
+    </section>
+
+    <section class="page" id="page-contact" data-page="contact" aria-labelledby="contact-title">
+      <div class="page-hero"><div class="wrap"><p class="eyebrow">Contact</p><h1 id="contact-title">Let’s find the right place to start.</h1><p>Tell us what takes too much time, where leads get stuck, or what you wish your business handled more consistently.</p><div class="hero-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div>
+      <div class="section paper"><div class="wrap contact-grid">
+        <div><h2>Choose the easiest way to reach us.</h2><p class="lede">A short note about your business and the task you want to improve is enough to get the conversation started.</p><div class="contact-card">
+          <a class="contact-method" href="tel:+19027090974"><span class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><strong>Phone</strong><span>+1 902-709-0974</span></span></a>
+          <a class="contact-method" href="mailto:CapeBretonAIServices@gmail.com?subject=Free%20AI%20Automation%20Consultation"><span class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><strong>Email</strong><span>CapeBretonAIServices@gmail.com</span></span></a>
+          <a class="contact-method" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener" data-conversion="facebook-contact"><span class="glyph"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span><span><strong>Facebook Messenger</strong><span>Send a message to the Cape Breton AI Services Facebook Page</span></span></a>
+        </div></div>
+        <div><h2>Request your free consultation.</h2><p class="lede">Complete the short form and we will open a ready-to-send email in your mail app.</p>
+          <form class="lead-form" id="consultationForm">
+            <div class="field"><label for="leadName">Name</label><input id="leadName" name="name" autocomplete="name" required /></div>
+            <div class="field"><label for="businessName">Business name</label><input id="businessName" name="business" autocomplete="organization" required /></div>
+            <div class="field"><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="leadPhone">Phone</label><input id="leadPhone" name="phone" type="tel" autocomplete="tel" /></div>
+            <div class="field full"><label for="leadIndustry">Industry</label><select id="leadIndustry" name="industry" required><option value="">Choose one</option><option>Contracting</option><option>Plumbing</option><option>Electrical</option><option>Home services</option><option>Construction</option><option>Real estate</option><option>Automotive</option><option>Professional services</option><option>Other local service business</option></select></div>
+            <div class="field full"><label for="leadGoal">What would you like to automate?</label><textarea id="leadGoal" name="goal" required placeholder="For example: missed calls, lead follow-up, booking, or customer questions"></textarea></div>
+            <p class="form-help">Nothing is sent automatically. The button opens your email app with these details so you can review before sending.</p>
+            <button class="btn btn-primary" type="submit" data-conversion="consultation-form">Open email to request consultation</button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+          <h2 style="margin-top:48px">Serving Cape Breton and Nova Scotia.</h2><p class="lede">Based in Sydney, Nova Scotia, with service available across Cape Breton and throughout the province, including:</p><ul class="area-list"><li>Sydney</li><li>Glace Bay</li><li>North Sydney</li><li>Sydney Mines</li><li>New Waterford</li><li>Louisbourg</li><li>Baddeck</li><li>Port Hawkesbury</li><li>Inverness</li><li>Chéticamp</li></ul><p class="contact-note">Not listed? Reach out if your business is elsewhere in Cape Breton or Nova Scotia.</p></div>
+      </div></div>
+      <div class="section"><div class="wrap"><div class="cta-band"><div><h2>Start with a free conversation.</h2><p>We will talk through your current process and where practical automation could help.</p></div><div class="cta-actions"><a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a Free AI Automation Consultation</a><a class="btn btn-ghost-light" href="tel:+19027090974">Call 902-709-0974</a><a class="btn btn-ghost-light" href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Message us on Facebook</a></div></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><div><strong style="color:var(--ink)">Cape Breton AI Services</strong><br>Based in Sydney, Nova Scotia · Serving Cape Breton and Nova Scotia</div><div class="footer-links"><a href="tel:+19027090974">+1 902-709-0974</a><a href="mailto:CapeBretonAIServices@gmail.com">CapeBretonAIServices@gmail.com</a><a href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Facebook</a></div></div></footer>
+
+  <script>
+    (function () {
+      var validRoutes = ["home", "services", "pricing", "about", "contact"];
+      var titles = {
+        home: "Cape Breton AI Services | AI Automation for Local Businesses",
+        services: "AI Automation Services | Cape Breton AI Services",
+        pricing: "AI Automation Pricing | Cape Breton AI Services",
+        about: "About | Cape Breton AI Services",
+        contact: "Free AI Automation Consultation | Cape Breton AI Services"
+      };
+      var descriptions = {
+        home: "Practical AI automation for Cape Breton businesses: answer leads faster, book more appointments, and reduce repetitive admin.",
+        services: "Explore eight practical AI automation services for local businesses, from AI receptionists and missed-call text-back to CRM and review automation.",
+        pricing: "Clear pricing for AI receptionist, follow-up, review generation, website optimization, and connected business automation packages.",
+        about: "Meet Cape Breton AI Services, a local company run by Garrett and focused on useful, plain-language business automation.",
+        contact: "Request a free AI automation consultation with Cape Breton AI Services by phone, email, Facebook, or a short enquiry form."
+      };
+      var navLinks = document.getElementById("navLinks");
+      var menuBtn = document.getElementById("menuBtn");
+      var metaDescription = document.querySelector('meta[name="description"]');
+      var consultationForm = document.getElementById("consultationForm");
+      var formStatus = document.getElementById("formStatus");
+
+      window.dataLayer = window.dataLayer || [];
+      function track(name, detail) {
+        var payload = { event: "cbai_conversion", conversion_name: name, page: window.location.hash || "#home" };
+        if (detail) payload.detail = detail;
+        window.dataLayer.push(payload);
+        document.dispatchEvent(new CustomEvent("cbai:conversion", { detail: payload }));
+      }
+
+      function route() {
+        var target = window.location.hash.replace("#", "") || "home";
+        if (validRoutes.indexOf(target) === -1) target = "home";
+        document.querySelectorAll("[data-page]").forEach(function (page) {
+          page.classList.toggle("active", page.getAttribute("data-page") === target);
+        });
+        document.querySelectorAll("[data-route]").forEach(function (link) {
+          var current = link.getAttribute("data-route") === target;
+          if (current) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+        document.title = titles[target];
+        if (metaDescription) metaDescription.setAttribute("content", descriptions[target]);
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        window.scrollTo(0, 0);
+      }
+
+      menuBtn.addEventListener("click", function () {
+        var open = navLinks.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      });
+      document.addEventListener("click", function (event) {
+        var conversion = event.target.closest("[data-conversion]");
+        var scrollLink = event.target.closest("[data-scroll-target]");
+        if (conversion) track(conversion.getAttribute("data-conversion"), conversion.getAttribute("href") || "form");
+        if (scrollLink) {
+          event.preventDefault();
+          var section = document.getElementById(scrollLink.getAttribute("data-scroll-target"));
+          if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        if (!event.target.closest(".nav-inner")) {
+          navLinks.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      if (consultationForm) {
+        consultationForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (!consultationForm.reportValidity()) return;
+          var values = new FormData(consultationForm);
+          var body = [
+            "Name: " + values.get("name"),
+            "Business: " + values.get("business"),
+            "Email: " + values.get("email"),
+            "Phone: " + (values.get("phone") || "Not provided"),
+            "Industry: " + values.get("industry"),
+            "",
+            "What I would like to automate:",
+            values.get("goal")
+          ].join("\n");
+          track("consultation-form", "mailto-opened");
+          formStatus.textContent = "Your email app should open now. Review the message, then send it when ready.";
+          window.location.href = "mailto:CapeBretonAIServices@gmail.com?subject=" + encodeURIComponent("Free AI Automation Consultation — " + values.get("business")) + "&body=" + encodeURIComponent(body);
+        });
+      }
+
+      window.addEventListener("hashchange", route);
+      route();
+    }());
+  </script>
+</body>
+</html>

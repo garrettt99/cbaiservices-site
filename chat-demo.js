@@ -260,7 +260,16 @@
   }
 
   /* ---------- DOM ---------- */
-  var EXTRA_CSS = ".chat-nudge{position:fixed;right:20px;bottom:104px;z-index:10001;max-width:250px;background:#0f2a4a;color:#fff;border-radius:14px;padding:12px 36px 12px 14px;font-size:13.5px;line-height:1.45;box-shadow:0 10px 28px rgba(2,6,23,.22);cursor:pointer;animation:chatNudgeIn .35s ease}.chat-nudge-x{position:absolute;top:6px;right:10px;background:none;border:0;color:#9fb3cc;font-size:17px;cursor:pointer;line-height:1;padding:2px}.chat-nudge-x:hover{color:#fff}@keyframes chatNudgeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.chat-summary{background:#f1f5f9;border:1px solid #dbe4ef;border-radius:12px;padding:12px;margin:2px 0;color:#0f2a4a}.chat-summary ul{margin:8px 0;padding:0;list-style:none;font-size:13px;line-height:1.5}.chat-summary li{margin:3px 0}.chat-summary-book{display:block;text-align:center;background:#0f2a4a;color:#fff!important;border-radius:10px;padding:10px;margin-top:8px;text-decoration:none;font-weight:600}.chat-summary-book:hover{background:#1a3a5f}.chat-summary small{display:block;margin-top:8px;color:#5b6b82;font-size:12px}@media (max-width:760px){.chat-nudge{bottom:150px;right:12px}}";
+  var EXTRA_CSS = ".chat-nudge{position:fixed;right:20px;bottom:104px;z-index:10001;max-width:250px;background:#0f2a4a;color:#fff;border-radius:14px;padding:12px 36px 12px 14px;font-size:13.5px;line-height:1.45;box-shadow:0 10px 28px rgba(2,6,23,.22);cursor:pointer;animation:chatNudgeIn .35s ease}.chat-nudge-x{position:absolute;top:6px;right:10px;background:none;border:0;color:#9fb3cc;font-size:17px;cursor:pointer;line-height:1;padding:2px}.chat-nudge-x:hover{color:#fff}@keyframes chatNudgeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.chat-summary{background:#f1f5f9;border:1px solid #dbe4ef;border-radius:12px;padding:12px;margin:2px 0;color:#0f2a4a}.chat-summary ul{margin:8px 0;padding:0;list-style:none;font-size:13px;line-height:1.5}.chat-summary li{margin:3px 0}.chat-summary-book{display:block;text-align:center;background:#0f2a4a;color:#fff!important;border-radius:10px;padding:10px;margin-top:8px;text-decoration:none;font-weight:600}.chat-summary-book:hover{background:#1a3a5f}.chat-summary small{display:block;margin-top:8px;color:#5b6b82;font-size:12px}@media (max-width:760px){.chat-nudge{bottom:150px;right:12px}}" +
+  /* ---------- in-page booking modal (booking happens ON the site) ---------- */
+  ".chat-book-modal{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:18px}" +
+  ".chat-book-modal[hidden]{display:none}" +
+  ".chat-book-backdrop{position:absolute;inset:0;background:rgba(2,6,23,.62)}" +
+  ".chat-book-card{position:relative;width:min(780px,100%);height:min(740px,94vh);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(2,6,23,.35);display:flex;flex-direction:column}" +
+  ".chat-book-frame{flex:1;width:100%;border:0;background:#fff}" +
+  ".chat-book-x{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:#0f2a4a;color:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(2,6,23,.3)}" +
+  ".chat-book-x:hover{background:#1a3a5f}" +
+  "@media (max-width:760px){.chat-book-modal{padding:0}.chat-book-card{width:100%;height:100%;height:100dvh;border-radius:0}}";
 
   function build() {
     var st = document.createElement("style");
@@ -295,6 +304,21 @@
 
     document.body.appendChild(wrap);
     document.body.appendChild(bar);
+
+    /* In-page booking modal: booking happens ON the site, never navigates away. */
+    var modal = document.createElement("div");
+    modal.className = "chat-book-modal";
+    modal.hidden = true;
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "Book a free consultation");
+    modal.innerHTML =
+      '<div class="chat-book-backdrop"></div>' +
+      '<div class="chat-book-card">' +
+        '<button type="button" class="chat-book-x" aria-label="Close booking">×</button>' +
+        '<iframe class="chat-book-frame" title="Book a free consultation" src="about:blank"></iframe>' +
+      "</div>";
+    document.body.appendChild(modal);
     return wrap;
   }
 
@@ -310,6 +334,31 @@
     var session = { name: "", opened: false };
     var flow = null; /* {step, data:{}} */
     var nudgeShown = false;
+    var modalOpen = false;
+    var prevBodyOverflow = "";
+
+    /* ---------- in-page booking modal ---------- */
+    function openBooking() {
+      if (modalOpen) return; /* ignore repeat opens */
+      var modal = document.querySelector(".chat-book-modal");
+      if (!modal) return;
+      modalOpen = true;
+      modal.querySelector(".chat-book-frame").src = BOOKING_URL;
+      modal.hidden = false;
+      prevBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      modal.querySelector(".chat-book-x").focus();
+    }
+    function closeBooking() {
+      if (!modalOpen) return;
+      var modal = document.querySelector(".chat-book-modal");
+      modalOpen = false;
+      if (modal) {
+        modal.hidden = true;
+        modal.querySelector(".chat-book-frame").src = "about:blank";
+      }
+      document.body.style.overflow = prevBodyOverflow;
+    }
 
     var DEFAULT_QUICK = [["Our services", "What services do you offer?"], ["Pricing", "How much does it cost?"], ["Book a free call", "I'd like to book a call"]];
 
@@ -499,7 +548,9 @@
     fab.addEventListener("click", function () { panel.hidden ? open() : close(); });
     wrap.querySelector(".chat-close").addEventListener("click", close);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !panel.hidden) close();
+      if (e.key !== "Escape") return;
+      if (modalOpen) { closeBooking(); return; }
+      if (!panel.hidden) close();
     });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -511,6 +562,27 @@
     });
     document.querySelector(".sticky-book").addEventListener("click", function () { track("sticky-bar-book"); });
     document.querySelector(".sticky-call").addEventListener("click", function () { track("sticky-bar-call"); });
+
+    /* Wire the modal's own close controls. */
+    document.querySelector(".chat-book-x").addEventListener("click", closeBooking);
+    document.querySelector(".chat-book-backdrop").addEventListener("click", closeBooking);
+
+    /* Intercept EVERY booking link site-wide (chat panel, sticky bar, page
+     * content): open the in-page modal instead of navigating away.
+     * Capture phase, but we never stopPropagation — existing click listeners
+     * (e.g. the chat-demo-book / sticky-bar-book trackers) still fire.
+     * Modifier keys and non-primary buttons are left alone so e.g. ctrl-click
+     * still opens the widget in a new tab as the user intended. */
+    document.addEventListener("click", function (e) {
+      if (e.defaultPrevented) return;
+      if (typeof e.button === "number" && e.button !== 0) return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      var t = e.target;
+      var a = t && t.closest ? t.closest('a[href*="leadconnectorhq.com/widget/booking"]') : null;
+      if (!a) return;
+      e.preventDefault();
+      openBooking();
+    }, true);
   }
 
   if (document.readyState === "loading") {

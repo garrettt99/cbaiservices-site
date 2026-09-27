@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#0a1f44" />
-  <link rel="icon" href="data:," />
+  <link rel="icon" href="/logo.webp" type="image/webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
   <meta property="og:title" content="Cape Breton AI Services | Practical Business Automation" />
   <meta property="og:description" content="Answer leads faster, book more appointments, and reduce repetitive admin with practical AI solutions built for local businesses." />
   <meta property="og:locale" content="en_CA" />
+  <meta property="og:image" content="https://cbaiservices.ca/logo.webp" />
   <meta property="og:site_name" content="Cape Breton AI Services" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Cape Breton AI Services" />
@@ -90,6 +91,8 @@
       width: min(var(--max), calc(100% - 40px)); min-height: 72px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; }
+    .brand-logo { display: block; width: 40px; height: 40px; border-radius: 10px; }
     .nav-links { display: flex; align-items: center; gap: 4px; }
     .nav-link {
       text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 650;
@@ -329,6 +332,7 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-nav">
     <nav class="nav-inner" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Cape Breton AI Services — home"><img class="brand-logo" src="/logo.webp" alt="Cape Breton AI Services logo" width="40" height="40" /></a>
       <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         Menu

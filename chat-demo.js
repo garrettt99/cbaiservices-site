@@ -181,7 +181,12 @@
     {id:"bye", label:"Bye", q:"Bye",
      k:["bye","goodbye","later","night"], p:["see you","good night","talk later","gotta go"],
      a:"Goodbye! " + bookLink("The free consultation") + " is here whenever you’re ready.",
-     f:[]}
+     f:[]},
+    {id:"what_ai_does", label:"What can AI do for my business?", q:"What can AI do for my business?",
+     k:["business","businesses","company","companies","automation","automate","benefit","benefits","improve","growth","advantage"],
+     p:["what can ai do","what can it do","what can you do","how can ai help","how can it help","how could ai help","what does ai do","could this help","could it help","would this help","would it help","can it help","help my business","help my company","help my shop","for my business","for my company","for businesses"],
+     a:"In plain terms: an AI receptionist answers every call 24/7, missed calls get an instant text back, customers book themselves from your real availability, and every lead gets followed up so none go cold — with automated reviews and a CRM keeping it all organized. It’s the lead-capture and admin work, handled around the clock.",
+     f:[["Our services","What services do you offer?"],["Pricing","How much does it cost?"],["Book a free call","I'd like to book a call"]]}
   ];
 
   function scoreIntent(it, toks, raw) {
@@ -231,7 +236,7 @@
     }
     return {
       id: "fallback",
-      html: "I’m still just a scripted demo, so that one’s beyond me — but I can help with one of these, or you can " + bookLink("book a free call") + " and ask Garrett directly:",
+      html: "Good question — honest answer: that’s outside my script. I’m a demo with a few dozen topics, not the full AI. These are my strong suits, or you can " + bookLink("book a free call") + " and ask Garrett anything directly:",
       f: sug,
       score: bestScore
     };

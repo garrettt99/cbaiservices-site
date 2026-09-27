@@ -303,3 +303,69 @@
 /* Brand logo */
 .brand { display: inline-flex; align-items: center; gap: 10px; }
 .brand-logo { display: block; width: 38px; height: 38px; border-radius: 9px; }
+
+/* Demo chatbot widget */
+.chat-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.chat-fab { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 62px; height: 62px; border-radius: 50%; border: none; cursor: pointer; background: var(--navy); box-shadow: var(--shadow); padding: 7px; transition: transform .18s ease; }
+.chat-fab:hover { transform: scale(1.06); }
+.chat-fab img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.chat-fab-badge { position: absolute; top: -7px; right: -7px; background: var(--blue); color: #fff; font-size: .6rem; font-weight: 850; letter-spacing: .04em; padding: 3px 8px; border-radius: 999px; box-shadow: var(--shadow); }
+.chat-panel { position: fixed; right: 22px; bottom: 96px; z-index: 61; width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100dvh - 190px)); min-height: 430px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden; }
+.chat-panel[hidden] { display: none; }
+.chat-header { display: flex; align-items: center; gap: 11px; background: var(--navy); color: #fff; padding: 12px 14px; }
+.chat-avatar { width: 38px; height: 38px; border-radius: 50%; flex: 0 0 auto; }
+.chat-header strong { display: block; font-size: .95rem; line-height: 1.3; }
+.chat-demo-badge { display: inline-block; font-size: .64rem; font-weight: 850; letter-spacing: .05em; background: #1e90ff; color: #fff; border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: 2px; }
+.chat-header small { color: #a9bfd8; font-size: .74rem; display: block; }
+.chat-close { margin-left: auto; background: transparent; border: none; color: #fff; font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 4px 8px; }
+.chat-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--canvas); }
+.chat-msg { max-width: 86%; padding: 10px 13px; border-radius: 14px; font-size: .9rem; line-height: 1.55; overflow-wrap: break-word; }
+.chat-msg.bot { align-self: flex-start; background: var(--paper); border: 1px solid var(--line); border-top-left-radius: 4px; }
+.chat-msg.user { align-self: flex-end; background: var(--blue); color: #fff; border-top-right-radius: 4px; }
+.chat-msg.bot a { color: var(--blue-strong); font-weight: 750; }
+.chat-typing span { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: var(--muted); animation: chatBlink 1s infinite; }
+.chat-typing span:nth-child(2) { animation-delay: .18s; }
+.chat-typing span:nth-child(3) { animation-delay: .36s; }
+@keyframes chatBlink { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+.chat-quick { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 14px 2px; background: var(--paper); }
+.chat-quick button { border: 1px solid var(--blue); color: var(--blue-strong); background: var(--paper); border-radius: 999px; padding: 7px 13px; font-size: .8rem; font-weight: 750; cursor: pointer; }
+.chat-quick button:hover { background: var(--blue-soft); }
+.chat-input-row { display: flex; gap: 8px; padding: 10px 14px; background: var(--paper); }
+.chat-input-row input { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: inherit; font-size: .9rem; background: var(--canvas); color: var(--ink); }
+.chat-input-row button { background: var(--blue); color: #fff; border: none; border-radius: 10px; padding: 10px 16px; font-weight: 750; cursor: pointer; }
+.chat-input-row button:hover { background: var(--blue-strong); }
+.chat-book { display: block; text-align: center; background: var(--navy); color: #fff !important; font-weight: 800; text-decoration: none; padding: 13px; font-size: .92rem; }
+.chat-book:hover { background: var(--navy-2); }
+
+/* Sticky mobile CTA bar */
+.sticky-cta { display: none; }
+@media (max-width: 760px) {
+  body { padding-bottom: 66px; }
+  .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: var(--paper); border-top: 1px solid var(--line); padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px; }
+  .sticky-cta a { flex: 1; text-align: center; padding: 12px 8px; border-radius: 10px; font-weight: 800; text-decoration: none; font-size: .92rem; }
+  .sticky-call { border: 1px solid var(--line); color: var(--ink); background: var(--paper); }
+  .sticky-book { background: var(--blue); color: #fff; }
+  .chat-fab { bottom: 86px; right: 16px; }
+  .chat-panel { right: 16px; bottom: 160px; height: min(540px, calc(100dvh - 250px)); }
+}
+
+/* Proof section */
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
+.proof-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; }
+.proof-card .glyph { width: 38px; height: 38px; color: var(--blue-strong); margin-bottom: 18px; display: grid; place-items: center; background: var(--blue-soft); border-radius: 9px; }
+.proof-card p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+.proof-placeholder { border: 2px dashed var(--blue); background: var(--blue-soft); border-radius: var(--radius-md); padding: 20px 24px; margin-top: 16px; color: var(--muted); font-size: .9rem; }
+.proof-placeholder strong { color: var(--ink); }
+@media (max-width: 760px) { .proof-grid { grid-template-columns: 1fr; } }
+
+/* Missed-call cost calculator */
+.calc-wrap { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(26px, 4vw, 44px); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); align-items: center; }
+.calc-fields .field { margin-bottom: 18px; }
+.calc-fields .field:last-child { margin-bottom: 0; }
+.calc-result { background: var(--navy); color: #fff; border-radius: var(--radius-md); padding: clamp(24px, 3vw, 34px); }
+.calc-result small { color: #8fc8ff; font-weight: 750; font-size: .82rem; letter-spacing: .02em; }
+.calc-amount { font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 800; letter-spacing: -.03em; color: #9bd0ff; margin: 6px 0 12px; }
+.calc-result p { color: #c3d4e8; font-size: .95rem; }
+.calc-result p strong { color: #fff; }
+.calc-result .btn { margin-top: 18px; }
+@media (max-width: 760px) { .calc-wrap { grid-template-columns: 1fr; } }

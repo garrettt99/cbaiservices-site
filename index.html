@@ -24,220 +24,16 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","ProfessionalService"],"name":"Cape Breton AI Services","description":"Practical AI automation services for small and medium-sized businesses.","areaServed":["Cape Breton, Nova Scotia","Nova Scotia, Canada","Sydney, Nova Scotia","Glace Bay, Nova Scotia","North Sydney, Nova Scotia","Sydney Mines, Nova Scotia","New Waterford, Nova Scotia","Louisbourg, Nova Scotia","Baddeck, Nova Scotia","Port Hawkesbury, Nova Scotia","Inverness, Nova Scotia","Chéticamp, Nova Scotia"],"telephone":"+1-902-709-0974","email":"CapeBretonAIServices@gmail.com","sameAs":["https://www.facebook.com/profile.php?id=61595028950871"],"slogan":"Practical AI solutions built for local businesses.","knowsAbout":["AI receptionist","missed-call text-back","automated lead follow-up","appointment booking automation","AI chatbots","CRM automation","email and SMS automation","review generation"]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will this replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "The focus is repetitive work and response gaps: answering routine questions, capturing lead details, sending follow-up, and helping with booking. Your team stays in control of the customer relationship and the work that needs human judgment."}}, {"@type": "Question", "name": "Do I need to change all of my current tools?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. The first step is understanding the tools and process you already use. We then identify the smallest practical improvement and confirm what can connect before recommending a build."}}, {"@type": "Question", "name": "Can I hear the AI receptionist before deciding?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The recorded live receptionist demo is available on this site, and the free consultation can focus on how a similar call flow would fit your business."}}, {"@type": "Question", "name": "What happens in the free consultation?", "acceptedAnswer": {"@type": "Answer", "text": "We discuss where leads or admin work get stuck, what a better process should look like, and which service—if any—is the right starting point. There is no need to prepare technical information."}}, {"@type": "Question", "name": "Where do you provide service?", "acceptedAnswer": {"@type": "Answer", "text": "Cape Breton AI Services is based in Sydney, Nova Scotia and works with businesses across Cape Breton and Nova Scotia, including Sydney, Glace Bay, North Sydney, New Waterford, Baddeck, Port Hawkesbury, Inverness, and surrounding communities."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Packages start with focused systems — for example, the AI Receptionist is $997 setup plus $197/month, and the Follow-Up & Review Engine is $697 setup plus $147/month. Every engagement starts with a free consultation where we confirm scope and the right starting point before anything is priced."}}, {"@type": "Question", "name": "What if the AI gets something wrong?", "acceptedAnswer": {"@type": "Answer", "text": "The AI answers from information we set up together — your services, area, and process — and hands off to a human when a question goes beyond that. You can review every conversation, so anything off gets caught and corrected quickly."}}, {"@type": "Question", "name": "How long does setup take?", "acceptedAnswer": {"@type": "Answer", "text": "A single focused system is typically up and running within a couple of weeks of the consultation. You’ll get a clear timeline for your setup before any work starts — no open-ended projects."}}, {"@type": "Question", "name": "Do I need a new phone number?", "acceptedAnswer": {"@type": "Answer", "text": "No. These systems work with your existing business number. If you’d rather keep automation on a separate line, we can set that up too."}}]}</script>
   
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<style>
-:root{
-  --bg:#0a1f44; --bg2:#0d2552; --card:#112d5e; --line:#1f3d70; --line2:#2b4c85;
-  --ink:#ffffff; --ink2:#c3d4e8; --muted:#8fa6c4;
-  --go:#4aa3ff; --go-deep:#0869c8; --btn:#167ee8; --warn:#ffc46b; --miss:#FF6B5B;
-  --paper:#f5f8fc; --paper-ink:#10213b;
-  --display:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --gutter:clamp(16px,5vw,72px);
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--body);overflow-x:clip}
-h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
-p{margin:0}
-a{color:var(--go)}
-img{max-width:100%;display:block}
-:focus-visible{outline:3px solid var(--go);outline-offset:3px;border-radius:8px}
-.wrap{padding-inline:var(--gutter)}
-.inner{max-width:1200px;margin-inline:auto}
-.eyebrow{font:700 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--go)}
-.lead{font-size:clamp(18px,1.6vw,21px);color:var(--ink2);max-width:58ch}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;border-radius:14px;font:700 17px/1.2 var(--body);text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap}
-.btn-go{background:var(--btn);color:#fff}.btn-go:hover{background:var(--go-deep);color:#fff}
-.btn-ghost{border-color:var(--line2);color:var(--ink);background:transparent}.btn-ghost:hover{border-color:var(--go);color:var(--ink)}
-.btn-lg{min-height:58px;padding:16px 28px;font-size:18px}
-section{padding-block:clamp(64px,9vw,120px)}
-.stack{display:flex;flex-direction:column;gap:18px}
-
-/* header */
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(10,31,68,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header .inner{display:flex;align-items:center;gap:20px;padding-block:14px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:800 19px/1 var(--display);letter-spacing:-.01em}
-.brand-mark{width:38px;height:38px;border-radius:10px;overflow:hidden;display:block}.brand-mark img{width:100%;height:100%}
-nav.main{display:flex;gap:22px;margin-left:auto}
-nav.main a{color:var(--ink2);text-decoration:none;font-weight:600;font-size:16px}
-nav.main a:hover{color:var(--ink)}
-.hdr-cta{display:flex;gap:10px;align-items:center}
-.hdr-phone{color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap}
-@media (max-width:980px){nav.main{display:none}.hdr-cta{margin-left:auto}}
-@media (max-width:560px){.hdr-phone{display:none}.hdr-cta .btn{min-height:44px;padding:10px 16px;font-size:15px}}
-
-/* hero */
-.hero .inner{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
-@media (max-width:940px){.hero .inner{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(42px,6.2vw,78px);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--go)}
-.local{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;color:var(--ink2);align-self:flex-start}
-.dot{width:8px;height:8px;border-radius:50%;background:#58c5a5;box-shadow:0 0 0 4px rgba(74,163,255,.18)}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.hero-note{font-size:15px;color:var(--muted)}
-
-/* phone mockup */
-.phone{background:var(--bg2);border:1px solid var(--line2);border-radius:28px;padding:18px;box-shadow:0 40px 80px rgba(0,0,0,.45);max-width:460px;width:100%;justify-self:center}
-.ph-top{display:flex;justify-content:space-between;align-items:center;padding:4px 6px 14px;border-bottom:1px solid var(--line)}
-.ph-top strong{font:700 15px var(--display)}
-.ph-live{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--go);font-weight:700}
-.ph-live .dot{animation:pulse 1.6s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(74,163,255,0)}}
-.chat{display:flex;flex-direction:column;gap:10px;padding:16px 4px 6px;min-height:360px}
-.msg{max-width:84%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.45;animation:pop .35s ease both}
-.msg.in{background:var(--card);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
-.msg.out{background:var(--btn);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
-.msg.sys{align-self:center;background:transparent;color:var(--muted);font-size:13px;padding:2px}
-.msg .who{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
-.lead-card{border:1px dashed var(--go);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--ink2);animation:pop .35s ease both}
-.lead-card strong{color:var(--go)}
-@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.ph-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid var(--line);padding:12px 6px 2px;font-size:13px;color:var(--muted)}
-.ph-foot button{background:none;border:1px solid var(--line2);color:var(--ink2);border-radius:10px;padding:7px 12px;font:600 13px var(--body);cursor:pointer}
-
-/* problem */
-.band-paper{background:var(--paper);color:var(--paper-ink)}
-.band-paper .lead{color:#50627a}
-.band-paper .eyebrow{color:var(--go-deep)}
-.gaps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
-@media (max-width:860px){.gaps{grid-template-columns:1fr}}
-.gap{background:#fff;border-radius:20px;padding:26px;border:1px solid #d9e2ed;display:flex;flex-direction:column;gap:10px}
-.gap .tag{font:700 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:#B3402F}
-.gap h3{font-size:24px}
-.gap p{color:#50627a}
-.gap .fix{margin-top:auto;padding-top:14px;border-top:1px solid #e9eef4;font-weight:700;color:var(--go-deep)}
-
-/* calculator */
-.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
-@media (max-width:900px){.calc{grid-template-columns:1fr}}
-.calc-box{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:22px}
-.rng label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:8px}
-.rng output{font:800 20px var(--display);color:var(--go);font-variant-numeric:tabular-nums}
-input[type=range]{width:100%;accent-color:var(--go);height:28px}
-.result{border-top:1px solid var(--line);padding-top:20px}
-.result .big{font:800 clamp(44px,6vw,64px)/1 var(--display);color:var(--miss);font-variant-numeric:tabular-nums}
-.result .yr{color:var(--ink2);margin-top:6px}
-.result .keep{margin-top:14px;color:var(--go);font-weight:700}
-
-/* services */
-.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:40px}
-@media (max-width:760px){.svc{grid-template-columns:1fr}}
-.svc-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px}
-.svc-card .ico{width:48px;height:48px;border-radius:14px;background:rgba(74,163,255,.12);color:var(--go);display:grid;place-items:center}
-.svc-card h3{font-size:26px}
-.svc-card p{color:var(--ink2)}
-.svc-card ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;color:var(--ink2);font-size:16px}
-.svc-card li::before{content:"→ ";color:var(--go);font-weight:700}
-
-/* proof */
-.proof{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
-@media (max-width:900px){.proof{grid-template-columns:1fr}}
-.proof-card{background:linear-gradient(160deg,#153a78,#0d2552);border:1px solid #2b4c85;border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:16px}
-.proof-card .who{display:flex;gap:12px;align-items:center}
-.proof-card .av{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;font:800 14px var(--display);color:#1B78B5}
-.p-row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid #2b4c85}
-.p-row .n{width:30px;height:30px;border-radius:50%;background:var(--btn);color:#fff;display:grid;place-items:center;font:800 14px var(--display);flex-shrink:0}
-.p-row strong{display:block;font-size:17px}
-.p-row span{color:var(--ink2);font-size:15px}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px;counter-reset:s}
-@media (max-width:860px){.steps{grid-template-columns:1fr}}
-.step{border-top:2px solid var(--go);padding-top:18px;display:flex;flex-direction:column;gap:8px}
-.step .k{font:800 14px var(--display);color:var(--go);letter-spacing:.06em}
-.step h3{font-size:24px}
-.step p{color:var(--ink2)}
-
-/* industries */
-.inds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.inds span{border:1px solid var(--line2);border-radius:99px;padding:10px 16px;font-weight:600;color:var(--ink2)}
-
-/* faq */
-.faq{display:flex;flex-direction:column;gap:10px;max-width:860px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px}
-.faq summary{cursor:pointer;padding:18px 22px;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--go);font:800 22px/1 var(--display)}
-.faq details[open] summary::after{content:"\2212"}
-.faq details p{padding:0 22px 20px;color:var(--ink2)}
-
-/* book */
-.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
-@media (max-width:900px){.book{grid-template-columns:1fr}}
-.form{background:var(--paper);color:var(--paper-ink);border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:14px}
-.form h3{font-size:26px}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:520px){.fgrid{grid-template-columns:1fr}}
-.fgrid .s2{grid-column:1/-1}
-.field{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
-.field input,.field select,.field textarea{font:inherit;font-weight:400;font-size:17px;padding:13px 14px;border:1px solid #d9e2ed;border-radius:12px;background:#fff;color:var(--paper-ink);width:100%;min-width:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{display:inline-flex;align-items:center;gap:8px;border:1px solid #d9e2ed;border-radius:99px;padding:9px 14px;font-weight:600;font-size:15px;cursor:pointer;background:#fff}
-.chips input{accent-color:var(--go-deep)}
-.chips label:has(input:checked){border-color:var(--go-deep);background:#e9f4ff}
-.err{color:#B3402F;font-weight:600;font-size:15px}
-.ok{background:#e9f4ff;border:1.5px solid var(--go-deep);border-radius:16px;padding:20px;color:#0a1f44}
-.small{font-size:14px;color:var(--muted)}
-.form .small{color:#50627a}
-.checks{display:flex;flex-direction:column;gap:12px}
-.checks div{display:flex;gap:12px;align-items:flex-start;color:var(--ink2)}
-.checks svg{flex-shrink:0;margin-top:3px;color:var(--go)}
-
-.svc8{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media (max-width:1100px){.svc8{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.svc8{grid-template-columns:1fr}}
-a.svc-card{text-decoration:none;color:var(--ink);transition:border-color .2s}
-a.svc-card:hover{border-color:var(--go)}
-.svc8 .svc-card h3{font-size:22px}
-.svc-card .prob{color:var(--warn);font-weight:600;font-size:15px}
-.svc-card .more{margin-top:auto;color:var(--go);font-weight:700}
-.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
-@media (max-width:980px){.prices{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.prices{grid-template-columns:1fr}}
-.price{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:8px;position:relative}
-.price h3{font-size:22px}
-.price .amt{font:800 40px/1.05 var(--display);color:var(--ink);margin-top:6px}
-.price .amt small{font:600 16px var(--body);color:var(--muted)}
-.price .mo{color:var(--go);font-weight:700}
-.price p:not(.amt):not(.mo){color:var(--ink2);font-size:16px}
-.price .btn{margin-top:auto}
-.price.best{border:2px solid var(--go);background:linear-gradient(170deg,#1a4a93,var(--card) 60%)}
-.best-tag{position:absolute;top:-13px;left:22px;background:var(--btn);color:#fff;font:800 12px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:8px}
-.about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:start}
-@media (max-width:900px){.about{grid-template-columns:1fr}}
-.vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
-@media (max-width:520px){.vals{grid-template-columns:1fr}}
-.vals div{border-left:3px solid var(--go);padding-left:14px;display:flex;flex-direction:column;gap:2px}
-.vals span{color:var(--ink2);font-size:15px}
-.area{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px}
-.contact-list{display:flex;flex-direction:column;border-top:1px solid #d9e2ed;margin-top:6px}
-.contact-list div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #d9e2ed;flex-wrap:wrap}
-.contact-list span{color:#50627a;font-weight:600}
-.contact-list a{color:var(--go-deep);font-weight:700;overflow-wrap:anywhere}
-@media (max-width:560px){.btn{white-space:normal;text-align:center}.cta-row .btn{width:100%}}
-footer{border-top:1px solid var(--line);padding-block:40px;color:var(--muted);font-size:15px}
-footer .inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-footer a{color:var(--ink2)}
-
-.mbar{display:none}
-@media (max-width:760px){.mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,31,68,.96);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}.mbar .btn{flex:1;min-height:48px}body{padding-bottom:80px}}
-</style>
-<style>[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="/site.css">
 </head>
 <body>
 
 
 <header><div class="wrap"><div class="inner">
-  <a class="brand" href="#top"><span class="brand-mark"><img src="/logo.webp" alt="" width="38" height="38"></span>Cape Breton AI</a>
-  <nav class="main" aria-label="Main"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#proof">Proof</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
-  <div class="hdr-cta"><a class="hdr-phone" href="tel:+19027090974">902-709-0974</a><a class="btn btn-go" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Free consultation</a></div>
-</div></div></header>
+  <a class="brand" href="/"><span class="brand-mark"><img src="/logo.webp" alt="" width="38" height="38"></span>Cape Breton AI</a>
+  <nav class="main" aria-label="Main"><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+  <div class="hdr-cta"><a class="hdr-phone" href="tel:+19027090974">902-709-0974</a><a class="btn btn-go" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Free consultation</a><button class="menu-toggle" type="button" aria-expanded="false" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">Menu</button></div>
+</div></div><nav class="mnav" id="mnav" aria-label="Mobile"><a href="/">Home</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></header>
 
 <main id="top">
 <section class="hero wrap"><div class="inner">
@@ -292,7 +88,7 @@ footer a{color:var(--ink2)}
     <div class="cta-row"><a class="btn btn-go" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener">Book a free consultation</a><a class="btn btn-ghost" href="https://muse.ai/s/interactive-demo-fg6nxlxrxdxodxdxx" target="_blank" rel="noopener">Hear a real recorded call ↗</a></div>
   </div>
   <div class="proof-card">
-    <div class="who"><span class="av">CAA</span><div><strong style="font-size:19px;font-family:var(--display)">Clean Air Atlantic</strong><br><span class="small">Heat pumps, ducts &amp; insulation · Cape Breton &amp; HRM</span></div></div>
+    <div class="who"><span class="av"><img src="/caa-logo.png" alt="Clean Air Atlantic logo" width="52" height="52"></span><div><strong style="font-size:19px;font-family:var(--display)">Clean Air Atlantic</strong><br><span class="small">Heat pumps, ducts &amp; insulation · Cape Breton &amp; HRM</span></div></div>
     <div class="p-row"><span class="n">1</span><div><strong>After-hours calls answered</strong><span>When the office is closed, the AI receptionist picks up, answers routine questions and captures what the caller needs.</span></div></div>
     <div class="p-row"><span class="n">2</span><div><strong>Every missed call texted back</strong><span>Calls that can't be answered get an instant text, so the conversation starts in seconds.</span></div></div>
     <div class="p-row"><span class="n">3</span><div><strong>Jobs booked into their scheduling system</strong><span>Qualified calls become booked appointments that land in the team's software. No retyping, no sticky notes.</span></div></div>
@@ -365,8 +161,8 @@ footer a{color:var(--ink2)}
 </div></section>
 </main>
 
-<footer class="wrap"><div class="inner"><span><strong style="color:var(--ink)">Cape Breton AI Services</strong> · Sydney, Nova Scotia · <a href="tel:+19027090974">902-709-0974</a> · <a href="mailto:CapeBretonAIServices@gmail.com">CapeBretonAIServices@gmail.com</a> · <a href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Facebook</a></span><span>© 2026 Cape Breton AI Services</span></div></footer>
-<div class="mbar"><a class="btn btn-ghost" href="tel:+19027090974">Call</a><a class="btn btn-go" href="https://api.leadconnectorhq.com/widget/booking/DgGSXap9g3fHGGPrjPCV" target="_blank" rel="noopener" style="flex:2">Free consultation</a></div>
+<footer class="wrap"><div class="inner"><span><strong style="color:var(--ink)">Cape Breton AI Services</strong> · Sydney, Nova Scotia · <a href="tel:+19027090974">902-709-0974</a> · <a href="mailto:CapeBretonAIServices@gmail.com">CapeBretonAIServices@gmail.com</a> · <a href="https://www.facebook.com/profile.php?id=61595028950871" target="_blank" rel="noopener">Facebook</a></span><span><a href="/services/">Services</a> · <a href="/pricing/">Pricing</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · © 2026</span></div></footer>
+<script src="/chat-demo.js" defer></script>
 
 <script>
 (function(){

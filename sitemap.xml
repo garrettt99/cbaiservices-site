@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cbaiservices.ca/</loc></url>
   <url><loc>https://cbaiservices.ca/services/</loc></url>
-  <url><loc>https://cbaiservices.ca/pricing/</loc></url>
+  <url><loc>https://cbaiservices.ca/automations/</loc></url>
+  <url><loc>https://cbaiservices.ca/websites-software/</loc></url>
+  <url><loc>https://cbaiservices.ca/case-studies/</loc></url>
   <url><loc>https://cbaiservices.ca/about/</loc></url>
   <url><loc>https://cbaiservices.ca/contact/</loc></url>
-  <url><loc>https://cbaiservices.ca/privacy/</loc></url>
-  <url><loc>https://cbaiservices.ca/services/ai-chatbots/</loc></url>
+  <url><loc>https://cbaiservices.ca/audit/</loc></url>
+  <url><loc>https://cbaiservices.ca/pricing/</loc></url>
   <url><loc>https://cbaiservices.ca/services/ai-receptionist/</loc></url>
-  <url><loc>https://cbaiservices.ca/services/appointment-booking-automation/</loc></url>
+  <url><loc>https://cbaiservices.ca/services/missed-call-text-back/</loc></url>
   <url><loc>https://cbaiservices.ca/services/automated-lead-follow-up/</loc></url>
+  <url><loc>https://cbaiservices.ca/services/appointment-booking-automation/</loc></url>
+  <url><loc>https://cbaiservices.ca/services/ai-chatbots/</loc></url>
   <url><loc>https://cbaiservices.ca/services/crm-automation/</loc></url>
   <url><loc>https://cbaiservices.ca/services/email-sms-automation/</loc></url>
-  <url><loc>https://cbaiservices.ca/services/missed-call-text-back/</loc></url>
   <url><loc>https://cbaiservices.ca/services/review-generation/</loc></url>
 </urlset>

@@ -305,7 +305,7 @@ h3{font:700 21px/1.25 var(--body);letter-spacing:-.01em}
 @media (min-width:761px){.site-foot{padding-bottom:56px}}
 
 /* mobile sticky action */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
 .mbar .btn{flex:1;min-height:50px;padding:10px 12px;font-size:16px}
 @media (max-width:760px){.mbar{display:flex}}
 

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Live Demo: See the AI Assistant Work | CBAI Services</title>
+<meta name="description" content="Play the customer. Text the AI assistant, watch it book the job, and see the alert the owner gets. An interactive demo from Cape Breton AI Services.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cbaiservices.ca/demo/">
+<meta name="theme-color" content="#0B1A24">
+<link rel="icon" href="/logo.webp" type="image/webp">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cape Breton AI Services">
+<meta property="og:url" content="https://cbaiservices.ca/demo/">
+<meta property="og:title" content="Live Demo: See the AI Assistant Work | CBAI Services">
+<meta property="og:description" content="Play the customer. Text the AI assistant, watch it book the job, and see the alert the owner gets.">
+<meta property="og:image" content="https://cbaiservices.ca/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg0:#0B1A24; --bg1:#17384A; --panel:#132836; --line:#2C4A5C;
+  --ink:#F6F4EE; --soft:#C9D6DC; --mute:#8FA3AD;
+  --amber:#F2A541; --navy:#10222E; --teal:#1F6F68;
+  --screen:#EEF1F2; --cream:#FFFDF8; --alert:#FFF4DC; --good:#DDF1EA; --grey:#45525C;
+}
+*{box-sizing:border-box}
+html{background:var(--bg0)}
+body{margin:0;background:linear-gradient(140deg,var(--bg0) 0%,var(--bg1) 100%) fixed;color:var(--ink);font-family:'DM Sans',Arial,sans-serif;font-size:16px;line-height:1.45;padding-inline:16px;padding-block:24px 56px;min-height:100%}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+button{font:inherit;cursor:pointer}
+input{font:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.brand{font-weight:700;letter-spacing:.02em}
+.brand span{color:var(--amber)}
+.forbiz{flex-direction:row;align-items:center;gap:10px;font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.1em}
+.forbiz input{background:rgba(255,255,255,.06);border:1px dashed var(--amber);color:var(--ink);border-radius:12px;padding:9px 13px;font-size:17px;font-weight:700;width:min(280px,60vw);text-transform:none;letter-spacing:0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{background:transparent;color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px}
+.tab[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--navy)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:48px;align-items:center}
+.story{display:flex;flex-direction:column;gap:22px;align-items:flex-start;min-width:0}
+.pill{background:rgba(242,165,65,.14);color:var(--amber);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:8px 14px}
+h1{font-family:'Domine',Georgia,serif;font-weight:700;font-size:clamp(34px,4.4vw,54px);line-height:1.08;margin:0;text-wrap:balance}
+.lede{font-size:19px;color:var(--soft);margin:0;max-width:44ch}
+.steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.steps li{display:flex;gap:14px;align-items:center;font-size:17px;font-weight:500}
+.steps b{flex:none;width:32px;height:32px;border-radius:50%;background:var(--amber);color:var(--navy);display:grid;place-items:center;font-size:15px}
+.next{background:var(--amber);color:var(--navy);border:0;border-radius:999px;padding:15px 26px;font-weight:700;font-size:17px}
+.mode{font-size:13px;color:var(--mute);margin:0}
+.col{display:flex;flex-direction:column;gap:14px;align-items:center}
+.col>span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.phone{width:330px;max-width:100%;background:#05101A;border:2px solid var(--line);border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.screen{background:var(--screen);color:var(--navy);border-radius:34px;height:600px;display:flex;flex-direction:column;overflow:hidden}
+.bar{background:#fff;padding:13px 16px;display:flex;gap:10px;align-items:center;font-weight:700;font-size:15px}
+.av{flex:none;width:36px;height:36px;border-radius:50%;background:var(--amber);display:grid;place-items:center}
+.av.g{background:var(--good)}
+.thread{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin}
+.msg{max-width:82%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.35;overflow-wrap:anywhere;animation:pop .28s ease-out}
+.msg.in{align-self:flex-start;background:#fff;border-bottom-left-radius:6px}
+.msg.out{align-self:flex-end;background:var(--teal);color:#fff;border-bottom-right-radius:6px}
+.dots{display:flex;gap:4px;padding:14px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#9AA7AF;animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+.div{align-self:center;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6B7A84;padding:6px 0;animation:pop .28s ease-out}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 0;scrollbar-width:none}
+.chip{white-space:nowrap;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700}
+.composer{background:#fff;display:flex;gap:8px;padding:10px 12px;margin-top:8px}
+.composer input{flex:1;min-width:0;border:0;background:var(--screen);color:var(--navy);border-radius:999px;padding:10px 14px;font-size:16px}
+.send{background:var(--teal);color:#fff;border:0;border-radius:999px;padding:0 16px;font-weight:700;font-size:13px}
+.send:disabled,.chip:disabled{opacity:.5;cursor:default}
+.alert{background:var(--alert);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:3px;animation:drop .4s cubic-bezier(.2,.9,.3,1.2)}
+.alert.good{background:var(--good)}
+.alert small{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.alert strong{font-size:15px}
+.alert span{font-size:13px;color:var(--grey);line-height:1.4}
+.empty{margin:auto;color:#6B7A84;font-size:13px;text-align:center;padding:0 24px}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.msg,.div,.alert,.dots i{animation:none}}
+.why{display:flex;flex-direction:column;gap:18px}
+.why h2{font-size:clamp(26px,3.2vw,36px);margin:0}
+.why>p{margin:0;color:var(--soft);font-size:18px;max-width:60ch}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.fact .n{font-family:'Domine',Georgia,serif;font-weight:700;font-size:48px;line-height:1;color:var(--amber);font-variant-numeric:tabular-nums}
+.fact p{margin:0;font-size:16px;line-height:1.4}
+.fact .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.fact a{color:var(--mute);font-size:13px;margin-top:auto;text-underline-offset:3px}
+@media (max-width:1060px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px}
+.card.light{background:var(--cream);color:var(--navy);border:0}
+h2{font-family:'Domine',Georgia,serif;font-weight:700;font-size:26px;line-height:1.15;margin:10px 0 0}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.fields .wide{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--soft)}
+.card input{background:var(--bg0);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:11px 13px;font-size:16px;width:100%}
+.note{font-size:13px;color:var(--mute);margin:12px 0 0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.stat{background:var(--amber);color:var(--navy);border-radius:16px;padding:18px;grid-column:1/-1}
+.stat .big{font-family:'Domine',Georgia,serif;font-weight:700;font-size:40px;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat p{margin:6px 0 0;font-size:15px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:13px 8px;font-size:16px;border-top:1px solid #E6E1D4}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B7A84;border-top:0}
+.r{text-align:right;white-space:nowrap}
+tr.hl td{background:#FCE9C4;font-weight:700;border-top:0}
+tr.hl td:first-child{border-radius:12px 0 0 12px}tr.hl td:last-child{border-radius:0 12px 12px 0}
+tr.hl+tr td{border-top:0}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta h2{margin:0}.cta p{margin:0;color:var(--soft);font-size:18px;max-width:56ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+a.next{text-decoration:none;display:inline-block}
+.ghost{color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:14px 22px;font-weight:700;text-decoration:none}
+.foot{font-size:13px;color:var(--mute);text-align:center;margin:0}
+@media (max-width:1060px){
+  .stage{grid-template-columns:1fr 1fr;gap:32px 20px}
+  .story{grid-column:1/-1}
+}
+@media (max-width:720px){
+  .stage,.lower,.fields{grid-template-columns:1fr}
+  .screen{height:500px}
+  .fields .wide{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/" style="color:inherit;text-decoration:none">Cape Breton <span>AI Services</span></a>
+    <label class="forbiz">Your business <input id="bName" value="Northside Plumbing" autocomplete="off" aria-label="Your business name"></label>
+    <div class="tabs" role="group" aria-label="Choose a demo">
+      <button class="tab" data-scene="missed">1 · Missed call</button>
+      <button class="tab" data-scene="followup">2 · Quote goes quiet</button>
+      <button class="tab" data-scene="review">3 · Job finished</button>
+    </div>
+  </div>
+
+  <section class="stage">
+    <div class="story">
+      <div class="pill" id="sPill"></div>
+      <h1 id="sTitle"></h1>
+      <p class="lede" id="sBody"></p>
+      <ol class="steps" id="sSteps"></ol>
+      <button class="next" id="sNext"></button>
+      <p class="mode" id="mode"></p>
+    </div>
+    <div class="col">
+      <span>Customer's phone · try it</span>
+      <div class="phone"><div class="screen">
+        <div class="bar"><div class="av" id="custAv">N</div><div id="custTitle">Northside Plumbing</div></div>
+        <div class="thread" id="cust" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+        <form class="composer" id="form">
+          <input id="box" placeholder="Type as the customer…" aria-label="Message as the customer" autocomplete="off">
+          <button class="send" id="send">Send</button>
+        </form>
+      </div></div>
+    </div>
+    <div class="col">
+      <span>Owner's phone</span>
+      <div class="phone"><div class="screen">
+        <div class="bar"><div class="av g">A</div><div>Alerts</div></div>
+        <div class="thread" id="owner" aria-live="polite"></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="pill" style="align-self:flex-start">Why this matters</div>
+    <h2>The job usually goes to whoever answers first</h2>
+    <p>Most local businesses lose work without ever knowing it: the call that wasn't returned, the quote nobody chased, the happy customer who was never asked for a review.</p>
+    <div class="facts">
+      <div class="fact"><span class="tag">Missed calls</span><div class="n">69%</div><p>of missed business calls get no callback within 48 hours.</p><a href="https://www.quo.com/blog/small-business-callback-statistics/" target="_blank" rel="noopener">Quo, 16.7M missed calls, 2026</a></div>
+      <div class="fact"><span class="tag">Speed</span><div class="n">7×</div><p>more likely to qualify a lead when a business replies within an hour instead of later.</p><a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener">Harvard Business Review, 2011</a></div>
+      <div class="fact"><span class="tag">Reviews</span><div class="n">83%</div><p>of people who were asked to leave a review went on to leave one.</p><a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal survey, 2026</a></div>
+      <div class="fact"><span class="tag">Star rating</span><div class="n">68%</div><p>of consumers will only use a business rated 4 stars or higher.</p><a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal survey, 2026</a></div>
+    </div>
+    <p class="note" style="margin:0">Figures are from the published studies linked above, not results from our own clients.</p>
+  </section>
+
+  <section class="lower" id="lower">
+    <div class="card">
+      <div class="pill" style="display:inline-block">Make it yours</div>
+      <h2>Try it as your business</h2>
+      <div class="fields">
+        <label class="wide">Type of business <input id="bType" value="plumbing company" autocomplete="off"></label>
+        <label class="wide">Services you offer <input id="bServ" value="leak repairs, water heaters, drain cleaning, bathroom installs" autocomplete="off"></label>
+        <label>Calls missed per week <input id="nMiss" type="text" inputmode="numeric" value="5"></label>
+        <label>Average job value ($) <input id="nJob" type="text" inputmode="numeric" value="400"></label>
+      </div>
+      <p class="note">Example figures. The business name is set at the top of the page; change it there and the demo switches over.</p>
+      <div class="stats">
+        <div class="stat"><div class="big" id="nOut"></div><p id="nLine"></p></div>
+      </div>
+    </div>
+    <div class="card light">
+      <div class="pill" style="display:inline-block;background:rgba(31,111,104,.12);color:#1F6F68">Pricing</div>
+      <h2>Simple, flat pricing</h2>
+      <div class="tw"><table>
+        <tr><th>Service</th><th class="r">Setup</th><th class="r">Monthly</th></tr>
+        <tr><td>AI Receptionist</td><td class="r">$997</td><td class="r">$197</td></tr>
+        <tr><td>Follow-Up &amp; Review Engine</td><td class="r">$697</td><td class="r">$147</td></tr>
+        <tr class="hl"><td>Complete System Bundle</td><td class="r">$1,500</td><td class="r">$297</td></tr>
+        <tr><td>Website Optimization</td><td class="r">$997</td><td class="r">one-time</td></tr>
+        <tr><td>New Website Build</td><td class="r">from $2,500</td><td class="r">one-time</td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <div class="cta"><h2>Want this running for your business?</h2><p>Take the free AI audit. Seven quick questions, and you see where you are most likely losing time and leads.</p><div class="cta-row"><a class="next" href="/audit/">Start the free AI audit</a><a class="ghost" href="/pricing/">See pricing</a><a class="ghost" href="/">Back to the site</a></div></div>
+  <p class="foot">This is a simulation. Nothing typed here is sent as a real text and no real booking is made.</p>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const cust = $('#cust'), owner = $('#owner'), chips = $('#chips'), box = $('#box'), sendBtn = $('#send');
+const st = { scene: null, turns: [], slots: {}, busy: false, run: 0 };
+let sample = null, aiOff = false;
+const ORDER = ['missed', 'followup', 'review'];
+const STORY = {
+  missed: { pill: 'Demo 1 · AI Receptionist', title: 'Missed call. Booked job.', body: "You're on a job and can't pick up. The assistant texts back in seconds, answers questions and books the appointment.", steps: ['Texts back right away', 'Answers the common questions', 'Books it into your calendar'], next: 'Next: a quote goes quiet →' },
+  followup: { pill: 'Demo 2 · Follow-Up Engine', title: 'The quote you never chased.', body: 'Most quotes go cold because nobody follows up. The system checks in for you, and hands you the customer the moment they need a person.', steps: ['Checks in over the following days', 'Never changes or promises a price', 'Flags you when they need a call'], next: 'Next: the job is finished →' },
+  review: { pill: 'Demo 3 · Review Engine', title: 'More reviews, without asking.', body: 'When the job closes, the review request goes out on its own, while the customer is still happy.', steps: ['Sends when the job is marked done', 'One polite ask, never a nag', 'You do nothing'], next: 'Why this matters ↓' }
+};
+
+const biz = () => ({ name: $('#bName').value.trim() || 'the business', type: $('#bType').value.trim() || 'local business', serv: $('#bServ').value.trim() || 'general services' });
+const wait = ms => new Promise(r => setTimeout(r, ms));
+function el(tag, cls, text) { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; }
+function scroll(n) { n.scrollTop = n.scrollHeight; }
+function say(side, text) { const m = el('div', 'msg ' + side, text); cust.append(m); scroll(cust); return m; }
+function typing() { const m = el('div', 'msg in dots'); m.append(el('i'), el('i'), el('i')); cust.append(m); scroll(cust); return m; }
+function divider(text) { cust.append(el('div', 'div', text)); scroll(cust); }
+function alertCard(label, title, body, good) {
+  const e = owner.querySelector('.empty'); if (e) e.remove();
+  const a = el('div', 'alert' + (good ? ' good' : ''));
+  a.append(el('small', '', label), el('strong', '', title), el('span', '', body));
+  owner.append(a); scroll(owner);
+}
+function setChips(list) { chips.textContent = ''; for (const t of list) { const c = el('button', 'chip', t); c.type = 'button'; c.onclick = () => send(t); chips.append(c); } }
+function setBusy(b) { st.busy = b; sendBtn.disabled = b; chips.querySelectorAll('button').forEach(c => c.disabled = b); }
+function setMode() { $('#mode').textContent = (sample && !aiOff) ? 'Replies on this page: live AI' : 'This is a simulation with example replies. Your real assistant is trained on your business.'; }
+
+function rules() {
+  const B = biz();
+  const ctx = st.scene === 'followup'
+    ? 'Context: this customer got a quote from the business and has not replied; the business has sent follow-up texts. On price pushback or anything you cannot answer, do not negotiate: say someone will call, and use event "handoff". If they want to go ahead, thank them, say someone will call to book, event "won". If they decline, close politely, event "stop".'
+    : st.scene === 'review'
+    ? 'Context: the job is finished and you asked the customer for a Google review. Thank them warmly for any reply. If they report a problem with the work, apologise, say someone will call, and use event "handoff".'
+    : 'Context: this customer called, the call was missed, and you texted them back. Help them, and try to book an appointment: you need their name, what they need done, and a preferred day and time. Once you have all three, confirm the booking and use event "booked" with name, service and when filled in. Use event "handoff" only for complaints or things you cannot answer.';
+  return `You are the AI text assistant for ${B.name}, a ${B.type} in Cape Breton, Nova Scotia. Services: ${B.serv}.
+Write like a friendly local person. SMS length: 1 to 2 short sentences, no emojis, no links.
+Never invent prices, availability or facts about the business. If asked for a price, say it depends on the job and offer a free estimate.
+${ctx}
+Reply with ONLY a JSON object: {"reply": string, "event": null | "booked" | "handoff" | "won" | "stop", "name": string | null, "service": string | null, "when": string | null, "note": string | null}
+Example: {"reply":"Sure, what day works for you?","event":null,"name":null,"service":null,"when":null,"note":null}`;
+}
+
+function scripted(t) {
+  const s = st.slots, l = t.toLowerCase(), B = biz();
+  if (st.scene === 'review') {
+    if (/problem|issue|not happy|leak|broke|wrong|complain|call/.test(l)) return { reply: "I'm sorry to hear that. I'll have someone call you today to make it right.", event: 'handoff', note: 'Customer reported a problem after the job' };
+    return { reply: `Thank you! We really appreciate it. Thanks again for choosing ${B.name}.`, event: 'thanks', note: t.slice(0, 70) };
+  }
+  if (st.scene === 'followup') {
+    if (/not interested|no thanks|stop|someone else|went with/.test(l)) return { reply: "No problem at all, thanks for letting us know. We're here if anything changes.", event: 'stop', note: 'Customer declined the quote' };
+    if (/price|high|expensive|cost|cheaper|discount|too much/.test(l)) return { reply: "Totally understand. I'll have someone give you a quick call to walk through the quote and your options.", event: 'handoff', note: 'Price concern on the quote' };
+    if (/go ahead|book|yes|let'?s do|sounds good|ok/.test(l)) return { reply: `Great, thank you! Someone from ${B.name} will call you shortly to get you booked in.`, event: 'won', note: 'Customer wants to go ahead' };
+    return { reply: "Thanks for getting back to us. I'll pass that along and someone will follow up with you.", event: 'handoff', note: t.slice(0, 80) };
+  }
+  if (s.ask === 'name') { s.name = t.trim().replace(/^(it'?s|my name is|i'?m|this is)\s+/i, '').slice(0, 40); s.ask = null; }
+  else if (s.ask === 'when') { s.when = t.trim().slice(0, 60); s.ask = null; }
+  else if (s.ask === 'need') { s.need = t.trim().slice(0, 80); s.ask = null; }
+  const w = l.match(/\b(mon|tues|wednes|thurs|fri|satur|sun)day\b[^.?!]*|tomorrow[^.?!]*/);
+  if (w && !s.when) s.when = w[0].trim();
+  if (/price|cost|how much|\$/.test(l) && !s.priced) { s.priced = 1; return { reply: `Pricing depends on the job, so ${B.name} gives a firm quote after a quick look. Want me to book a free estimate?`, event: null }; }
+  if (!s.need) {
+    if (/area|come (out )?to|do you (do|cover|service)/.test(l)) { s.ask = 'need'; return { reply: 'Yes, we can help with that. What do you need done?', event: null }; }
+    if (l.length > 14 && !/^(hi|hello|hey|yes|sure|ok|can i book)\b/.test(l)) s.need = t.trim().slice(0, 80);
+    else { s.ask = 'need'; return { reply: 'Happy to help. What do you need done?', event: null }; }
+  }
+  if (!s.name) { s.ask = 'name'; return { reply: 'Got it. Can I get your name?', event: null }; }
+  if (!s.when) { s.ask = 'when'; return { reply: `Thanks, ${s.name}. What day and time works best for you?`, event: null }; }
+  if (!s.done) { s.done = 1; return { reply: `You're booked, ${s.name}: ${s.when}. ${B.name} will see you then.`, event: 'booked', name: s.name, service: s.need, when: s.when }; }
+  return { reply: `You're all set. Thanks for reaching out to ${B.name}!`, event: null };
+}
+
+async function answer(text) {
+  st.turns.push({ role: 'user', content: text });
+  if (sample && !aiOff) {
+    try {
+      const r = await sample.json([{ role: 'user', content: rules() }, ...st.turns.slice(-16)], { modelTier: 'quick', cache: false });
+      if (r && typeof r.reply === 'string' && r.reply.trim()) { st.turns.push({ role: 'assistant', content: JSON.stringify(r) }); return r; }
+    } catch (e) {
+      if (['not_granted', 'sampling_disabled', 'not_declared', 'capability_disabled', 'capability_removed'].includes(e && e.code)) { aiOff = true; setMode(); }
+    }
+  }
+  const r = scripted(text);
+  st.turns.push({ role: 'assistant', content: JSON.stringify(r) });
+  return r;
+}
+
+async function send(text) {
+  text = String(text || '').trim();
+  if (!text || st.busy || !st.scene) return;
+  const run = st.run;
+  box.value = ''; say('out', text); setBusy(true);
+  const dots = typing();
+  const [r] = await Promise.all([answer(text), wait(900)]);
+  if (run !== st.run) return;
+  dots.remove();
+  say('in', String(r.reply));
+  const B = biz();
+  if (r.event === 'booked') alertCard('New booking', `${r.name || 'Customer'} · ${r.when || 'time to confirm'}`, `${r.service || 'Service request'}. Added to your calendar by the assistant.`, true);
+  else if (r.event === 'won') alertCard('Quote accepted', 'Customer wants to go ahead', 'Call them to book the job in.', true);
+  else if (r.event === 'handoff') alertCard('Needs you', r.note || 'Customer has a question', `The assistant told them someone from ${B.name} will call.`);
+  else if (r.event === 'stop') alertCard('Closed out', r.note || 'Customer declined', 'Follow-ups stopped. No more texts will go to them.');
+  else if (r.event === 'thanks') alertCard('Customer replied', `"${r.note}"`, 'No action needed.', true);
+  setBusy(false);
+}
+
+async function play(list, run) {
+  setBusy(true);
+  for (const step of list) { await wait(1000); if (run !== st.run) return; step(); }
+  setBusy(false);
+}
+
+function start(scene) {
+  st.run++; st.scene = scene; st.turns = []; st.slots = {};
+  const run = st.run, B = biz(), S = STORY[scene];
+  $('#sPill').textContent = S.pill; $('#sTitle').textContent = S.title; $('#sBody').textContent = S.body; $('#sNext').textContent = S.next;
+  const ol = $('#sSteps'); ol.textContent = '';
+  S.steps.forEach((t, i) => { const li = el('li'); li.append(el('b', '', String(i + 1)), el('span', '', t)); ol.append(li); });
+  cust.textContent = ''; owner.textContent = ''; owner.append(el('div', 'empty', 'Alerts land here as things happen.'));
+  $('#custTitle').textContent = B.name; $('#custAv').textContent = (B.name[0] || 'B').toUpperCase();
+  document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scene === scene)));
+  const first = text => { say('in', text); st.turns.push({ role: 'assistant', content: JSON.stringify({ reply: text, event: null }) }); };
+  if (scene === 'missed') {
+    setChips(['I have a leak under my sink', 'How much does it cost?', 'Can I book Thursday at 2?']);
+    play([
+      () => divider(`Missed call to ${B.name}`),
+      () => { first(`Hi, it's ${B.name}. Sorry we missed your call! How can we help?`); alertCard('Missed call', 'Caller (902) 555-0142', 'The assistant texted them back right away.'); }
+    ], run);
+  } else if (scene === 'followup') {
+    setChips(['The price is a bit high', "Let's go ahead", 'Not interested, thanks']);
+    play([
+      () => divider('Quote sent · no reply'),
+      () => divider('2 days later'),
+      () => first(`Hi, it's ${B.name}. Did you get a chance to look over the quote? Any questions I can help with?`),
+      () => divider('5 days later'),
+      () => { first('Hi again. Happy to go over any part of the quote, or talk timing if that helps.'); alertCard('Follow-ups sent', '2 texts over 5 days', 'Sent automatically. You did nothing.'); }
+    ], run);
+  } else {
+    setChips(['Sure, will do. Great service!', 'Actually I have a problem']);
+    play([
+      () => divider('Job marked complete'),
+      () => { first(`Thanks for choosing ${B.name}! If you were happy with the work, would you mind leaving us a quick Google review?`); alertCard('Review request sent', 'Sent after the job closed', 'Goes out on its own while the customer is still happy.', true); }
+    ], run);
+  }
+}
+
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => start(b.dataset.scene));
+$('#sNext').onclick = () => { const i = ORDER.indexOf(st.scene); if (i < ORDER.length - 1) start(ORDER[i + 1]); else document.querySelector('.why').scrollIntoView({ behavior: 'smooth' }); };
+$('#form').addEventListener('submit', e => { e.preventDefault(); send(box.value); });
+let nameT; $('#bName').addEventListener('input', () => { clearTimeout(nameT); nameT = setTimeout(() => start(st.scene || 'missed'), 700); });
+
+const num = id => Math.max(0, Number(String($(id).value).replace(/[^0-9.]/g, '')) || 0);
+const money = n => '$' + Math.round(n).toLocaleString('en-CA');
+function calc() {
+  const miss = num('#nMiss'), job = num('#nJob');
+  $('#nOut').textContent = money(job * 4) + ' a month';
+  const cover = job > 0 ? Math.ceil(297 / job) : 0;
+  $('#nLine').textContent = job > 0
+    ? `That's if just one of your ${miss || 'missed'} missed calls a week becomes a job. The complete system is $297 a month, which ${cover} job${cover === 1 ? '' : 's'} a month covers.`
+    : 'Enter an average job value to see the number.';
+}
+$('#nMiss').addEventListener('input', calc); $('#nJob').addEventListener('input', calc);
+
+calc(); setMode(); start('missed');
+</script>
+</body>
+</html>

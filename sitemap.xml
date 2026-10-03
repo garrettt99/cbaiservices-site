@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cbaiservices.ca/</loc></url>
+  <url><loc>https://cbaiservices.ca/privacy-policy/</loc></url>
   <url><loc>https://cbaiservices.ca/services/</loc></url>
   <url><loc>https://cbaiservices.ca/automations/</loc></url>
   <url><loc>https://cbaiservices.ca/websites-software/</loc></url>
@@ -17,5 +18,4 @@
   <url><loc>https://cbaiservices.ca/services/crm-automation/</loc></url>
   <url><loc>https://cbaiservices.ca/services/email-sms-automation/</loc></url>
   <url><loc>https://cbaiservices.ca/services/review-generation/</loc></url>
-  <url><loc>https://cbaiservices.ca/privacy-policy/</loc></url>
 </urlset>

@@ -1,4 +1,4 @@
-/* Cape Breton AI Services — site behaviour (no dependencies) */
+/* CBAI Services — site behaviour (no dependencies) */
 (function(){
 'use strict';
 var CFG={
